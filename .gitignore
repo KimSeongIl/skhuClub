@@ -4,3 +4,8 @@
 src/controller/*
 
 build/classes/controller/*
+
+WebContent/WEB-INF/CommandT.properties
+
+WebContent/WEB-INF/web.xml
+
