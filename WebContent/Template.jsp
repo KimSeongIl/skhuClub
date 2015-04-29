@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>º∫∞¯»∏¥Î µøæ∆∏Æ ƒøπ¬¥œ∆º</title>
+<title>ÏÑ±Í≥µÌöåÎåÄ ÎèôÏïÑÎ¶¨ Ïª§ÎÆ§ÎãàÌã∞</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -82,14 +82,45 @@
 	background: #909090 !important;
 	color: black !important;
 }
+#layered{
+	position:absolute;
+	left:0;
+	top:0;
+	background:#000;
+	z-index:1000;
+	opacity:0.7;
+	
+	display:none;
+}
+#loginDiv{
+	position:absolute;
+	left:0;
+	top:0;
+	width:250px;
+	height:250px;
+	text-align:center;
+	z-index:1001;
+	display:none;
+	padding-top:10px;
+	background:#EBEBEB;
+	border-radius:10px;
+}
+#loginClose{
+	margin-right:10px;
+}
 </style>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/fullcalendar.min.js"></script>
+<script>
+	uauth="<%=session.getAttribute("auth")%>";
+</script>
+
 <script>
 	$(document).ready(
 			function() {
-
+				
 				$('.dropdown,.dropdown-menu').hover(
 						function() {
 
@@ -108,10 +139,56 @@
 							}
 						})
 
+				$('#login').click(function(){
+					var loginLeft=($(window).width()-$('#loginDiv').outerWidth())/2;
+					var loginTop=($(window).height()-$('#loginDiv').outerHeight())/2;
+					$('#loginDiv').css({'left':loginLeft,'top':loginTop,'display':'block'});
+					wrapMask();
+				})
+				$("#loginClose").click(function(){
+					$('#layered,#loginDiv').css('display','none');
+					
+				})
+				
+				window.onresize=function(){
+					
+					var maskWidth=$(document).width();
+					var maskHeight=$(document).height();
+					
+					$('#layered').css({'width':maskWidth,'height':maskHeight});
+					
+					var loginLeft=($(window).width()-$('#loginDiv').outerWidth())/2;
+					var loginTop=($(window).height()-$('#loginDiv').outerHeight())/2;
+					$('#loginDiv').css({'left':loginLeft,'top':loginTop});
+					
+					
+				}
 			})
+	function wrapMask(){
+		
+		var maskWidth=$(document).width();
+		var maskHeight=$(document).height();
+		
+		$('#layered').css({'width':maskWidth,'height':maskHeight,'display':'block'});
+		
+	}
+	
+	
 </script>
+
 </head>
 <body>
+	<div id="layered" ></div>
+	<div id="loginDiv">
+		<div id="loginClose">
+			<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div><br><br>
+		<form class="form-inline" action="login.do" method="post">
+			<input type="text" class="form-control" placeholder="ID" name="id"><br><br>
+			<input type="password" class="form-control" placeholder="PW" name="pw"><br><br>
+			<input type="submit" value="Î°úÍ∑∏Ïù∏" class="btn btn-default">
+		</form>
+	</div>
 	<jsp:include page="Header.jsp" flush="false" />
 	<jsp:include page="Nav.jsp" flush="false" />
 	<%String article=(String)request.getAttribute("article"); %>

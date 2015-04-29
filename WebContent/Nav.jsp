@@ -9,7 +9,7 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 
 		</button>
-		<a class="navbar-brand" href="#">성공회대 동아리</a>
+		<a class="navbar-brand" href="main.do">성공회대 동아리</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
 			<li class="active dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown">총동연</a>
 				<ul class="dropdown-menu">
-					<li><a href="#">동아리 일정</a></li>
+					<li><a href="schedule.do">동아리 일정</a></li>
 					<li><a href="#">공지사항</a></li>
 
 				</ul></li>
@@ -37,7 +37,7 @@
 		<ul class="nav navbar-nav">
 			<li><a href="#">Link</a></li>
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
-				data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				data-toggle="dropdown">커뮤니티 <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">Action</a></li>
 					<li><a href="#">Another action</a></li>
