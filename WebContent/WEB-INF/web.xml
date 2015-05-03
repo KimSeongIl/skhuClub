@@ -14,15 +14,15 @@
   </servlet-mapping>
   
   <servlet>
-    <servlet-name>Calendar</servlet-name>
-    <servlet-class>controller.Calendar</servlet-class>
+    <servlet-name>CalendarServlet</servlet-name>
+    <servlet-class>controller.CalendarServlet</servlet-class>
     <init-param>
       <param-name>calPropertyConfig</param-name>
       <param-value>/WEB-INF/Calendar.properties</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Calendar</servlet-name>
+    <servlet-name>CalendarServlet</servlet-name>
     <url-pattern>*.cal</url-pattern>
   </servlet-mapping>
   

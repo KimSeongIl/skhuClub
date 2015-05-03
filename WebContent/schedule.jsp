@@ -1,3 +1,4 @@
+<script src="assets/js/calendar.js"></script>
 <div class="wrap">
 	
 
