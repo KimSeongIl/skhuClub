@@ -30,13 +30,14 @@ public class CalendarBean {
 				if(rs.next()){
 					calList=new ArrayList();
 					do{
-					cal = new CalendarData();
-					cal.setId(rs.getInt("id"));
-					cal.setTitle(rs.getString("name"));
-					cal.setStart(rs.getString("start"));
-					cal.setEnd(rs.getString("end"));
-					cal.setColor(rs.getString("color"));
-					calList.add(cal);
+						cal = new CalendarData();
+						cal.setId(rs.getInt("id"));
+						cal.setTitle(rs.getString("title"));
+						cal.setStart(rs.getString("start"));
+						cal.setEnd(rs.getString("end"));
+						cal.setColor(rs.getString("color"));
+						calList.add(cal);
+						
 					}while(rs.next());
 				}
 			}catch(Exception ee){}
@@ -49,18 +50,19 @@ public class CalendarBean {
 	public void insertCalendar(CalendarData cal){
 		
 		String title=cal.getTitle();
-		Timestamp start=cal.getStart();
-		Timestamp end=cal.getEnd();
+		String start=cal.getStart();
+		String end=cal.getEnd();
 		String color=cal.getColor();
 		try(
 				Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("insert into calendar values(?,?,?,?)");
+				PreparedStatement pstmt=conn.prepareStatement("insert into calendar(title,start,end,color) values(?,?,?,?)");
 			){
 			
 			pstmt.setString(1, title);
-			pstmt.setTimestamp(2, start);
-			pstmt.setTimestamp(3,end);
+			pstmt.setString(2, start);
+			pstmt.setString(3,end);
 			pstmt.setString(4, color);
+			pstmt.executeUpdate();
 			
 			
 		}catch(Exception e){
@@ -70,19 +72,20 @@ public class CalendarBean {
 	
 	public void updateCalendar(CalendarData cal){
 		int id=cal.getId();
-		Timestamp start=cal.getStart();
-		Timestamp end=cal.getEnd();
+		String start=cal.getStart();
+		String end=cal.getEnd();
+		
 		
 		try(
 				Connection conn=Conn.getConnection();
 				PreparedStatement pstmt=conn.prepareStatement("update calendar set start=?,end=? where id=?");
 			){
 			
-			pstmt.setTimestamp(1, start);
-			pstmt.setTimestamp(2, end);
+			pstmt.setString(1, start);
+			pstmt.setString(2, end);
 			pstmt.setInt(3,id);
 			
-			
+			pstmt.executeUpdate();
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -98,7 +101,7 @@ public class CalendarBean {
 			
 			
 			pstmt.setInt(1,id);
-			
+			pstmt.executeUpdate();
 			
 			
 		}catch(Exception e){

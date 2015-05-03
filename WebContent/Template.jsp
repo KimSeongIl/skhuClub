@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -110,17 +112,18 @@
 }
 </style>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
+
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/fullcalendar.min.js"></script>
 
-<script>
-	uauth="<%=session.getAttribute("auth")%>";
-</script>
+
+
+
 
 <script>
 	$(document).ready(
 			function() {
+				
 				
 				$('.dropdown,.dropdown-menu').hover(
 						function() {

@@ -35,14 +35,14 @@ public class CalendarData {
 	public void setStart(String start){
 		this.start=start;
 	}
-	public Timestamp getStart(){
-		return Timestamp.valueOf(start);
+	public String getStart(){
+		return start;
 	}
 	public void setEnd(String end){
 		this.end=end;
 	}
-	public Timestamp getEnd(){
-		return Timestamp.valueOf(end);
+	public String getEnd(){
+		return end;
 	}
 	
 	public void setColor(String color){

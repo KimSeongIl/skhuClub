@@ -106,9 +106,10 @@ public class CalendarServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);
+		if(view!=null){
+			RequestDispatcher dispatcher=request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+		}
 	}
 
 }
