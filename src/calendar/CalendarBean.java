@@ -47,27 +47,49 @@ public class CalendarBean {
 		
 		return calList;
 	}
-	public void insertCalendar(CalendarData cal){
+	public int insertCalendar(CalendarData cal){
 		
 		String title=cal.getTitle();
 		String start=cal.getStart();
 		String end=cal.getEnd();
 		String color=cal.getColor();
+		int number = 0;
+		
+		
 		try(
 				Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("insert into calendar(title,start,end,color) values(?,?,?,?)");
+				PreparedStatement pstmt=conn.prepareStatement("SELECT id from calendar order by id desc limit 1");
+				ResultSet rs=pstmt.executeQuery();
+				
 			){
 			
-			pstmt.setString(1, title);
-			pstmt.setString(2, start);
-			pstmt.setString(3,end);
-			pstmt.setString(4, color);
-			pstmt.executeUpdate();
+			if(rs.next()){
+				number=rs.getInt(1)+1;
+			}
+			else{
+				number=1;
+			}
+			try(PreparedStatement pstmt2=conn.prepareStatement("insert into calendar values(?,?,?,?,?)");){
+				pstmt2.setInt(1,number);
+				pstmt2.setString(2, title);
+				pstmt2.setString(3, start);
+				pstmt2.setString(4,end);
+				pstmt2.setString(5, color);
+				pstmt2.executeUpdate();
+				
+				
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+			
 			
 			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		
+		return number;
 	}
 	
 	public void updateCalendar(CalendarData cal){

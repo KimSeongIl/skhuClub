@@ -74,7 +74,7 @@ $(document).ready(function() {
 			var left=(screen.availWidth/2)-(200/2);
 			
 			
-			var se=window.open('select.cal?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=200, height=50,top='+top+',left='+left);
+			var se=window.open('select.cal?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=250,height=150,top='+top+',left='+left);
 
 
 			
@@ -114,6 +114,7 @@ $(document).ready(function() {
 			 	}
 			 	
 			 	if(confirm('삭제하시겠습니까?')){
+			 		
 			 		$.post('delete.cal',{id:event.id})
 			 		$('#calendar').fullCalendar('removeEvents',event.id);
 			 	}
@@ -149,6 +150,7 @@ function select(input){
 			start=start.slice(0,19)
 			end=end.slice(0,19)
 		}
+		
 		$('#calendar').fullCalendar('renderEvent',{
 			id:data,
 			title:ti,
