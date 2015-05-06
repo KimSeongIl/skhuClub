@@ -1,5 +1,4 @@
 
-<div class="wrap">
 	<div id="mainImage"></div>
 
 	<div id="article">
@@ -8,5 +7,5 @@
 	</div>
 	
 	
-</div>
+
 <div style="clear: both;"></div>

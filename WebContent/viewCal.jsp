@@ -13,4 +13,7 @@
 			out.print(cd.getColor() + "<br>");
 		}
 	}
+	
 %>
+
+	

@@ -1,4 +1,4 @@
-﻿
+﻿<div class="wrap">
 <nav class="navbar navbar-inverse" role="navigation">
 
 	<!-- Brand and toggle get grouped for better mobile display -->
@@ -15,7 +15,7 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li class="active dropdown"><a href="#" class="dropdown-toggle"
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown">총동연</a>
 				<ul class="dropdown-menu">
 					<li><a href="schedule.do">동아리 일정</a></li>
@@ -49,3 +49,4 @@
 	<!-- /.navbar-collapse -->
 
 </nav>
+<br>
