@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
   <servlet>
     <servlet-name>MainTemplate</servlet-name>
     <servlet-class>controller.MainTemplate</servlet-class>
@@ -8,10 +9,13 @@
       <param-value>/WEB-INF/CommandT.properties</param-value>
     </init-param>
   </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>MainTemplate</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
+  
   
   <servlet>
     <servlet-name>CalendarServlet</servlet-name>
@@ -21,12 +25,13 @@
       <param-value>/WEB-INF/Calendar.properties</param-value>
     </init-param>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>CalendarServlet</servlet-name>
     <url-pattern>*.cal</url-pattern>
   </servlet-mapping>
   
-  <security-constraint>
+    <security-constraint>
     <display-name>JSP Protection</display-name>
     <web-resource-collection>
       <web-resource-name>SequreJSPPages</web-resource-name>
@@ -42,6 +47,9 @@
   </description>
     <role-name>nobody</role-name>
   </security-role>
+  
+
+  
   <resource-ref>
     <description>skhuclub db</description>
     <res-ref-name>jdbc/skhuclub</res-ref-name>
