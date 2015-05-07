@@ -1,8 +1,11 @@
 package calendar;
 
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 
 
@@ -20,11 +23,14 @@ public class InsertCalendarAction implements CommandAction{
 		String start=request.getParameter("start");
 		String end=request.getParameter("end");
 		String color=request.getParameter("color");
-		System.out.println(start);
+		
 		CalendarData cal=new CalendarData(title,start,end,color);
 		
 		CalendarBean dbPro=CalendarBean.getInstance();
-		dbPro.insertCalendar(cal);
+		int number=dbPro.insertCalendar(cal);
+		
+		PrintWriter out=response.getWriter();
+		out.print(number);
 		
 		
 		

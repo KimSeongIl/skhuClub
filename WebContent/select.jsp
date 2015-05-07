@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일정 입력</title>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
+
 </head>
 <body>
 	<%
@@ -27,6 +28,7 @@
 		</select> <input type="button" class="btn btn-default btn-sm" value="확인"
 			onclick="window.opener.select(this.form);self.close()">
 	</form>
+
 
 </body>
 </html>

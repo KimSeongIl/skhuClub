@@ -110,6 +110,13 @@
 #loginClose{
 	margin-right:10px;
 }
+#board{
+	margin:auto;
+	width:400px;
+	
+}
+.fc-sun{color:red;}
+.fc-sat {color:#007dc3}
 </style>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
 
