@@ -94,7 +94,7 @@ public class MainTemplate extends HttpServlet {
 	private void requestPro(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
 		String view=null;
 		CommandAction com=null;
-		try{
+		try{//이부분은 요청한 URI에서 명령어를 추출하는 부분이다 .URI를 명령어로 사용하는 예제에서 추가되는 부분은 여기부터 
 			String command=request.getRequestURI();
 			if(command.indexOf(request.getContextPath())==0){
 				command=command.substring(request.getContextPath().length()+1);
