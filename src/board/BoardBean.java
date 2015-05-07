@@ -22,7 +22,7 @@ private static BoardBean instance=new BoardBean();
 		List boardList=null;
 		BoardData board=null;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select bid,name,btitle,bdate,inquiry from board b join member m on m.id=b.uid where category=?");){
+				PreparedStatement pstmt=conn.prepareStatement("select bid,name,btitle,bdate,inquiry from board b join member m on m.id=b.uid where category=? order by bid desc");){
 				
 				pstmt.setString(1, category);
 				

@@ -19,7 +19,7 @@
 				data-toggle="dropdown">총동연</a>
 				<ul class="dropdown-menu">
 					<li><a href="schedule.do">동아리 일정</a></li>
-					<li><a href="#">공지사항</a></li>
+					<li><a href="board.do?category=notice">공지사항</a></li>
 
 				</ul></li>
 
