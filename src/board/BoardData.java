@@ -13,6 +13,7 @@ public class BoardData {
 	private int inquiry;
 	private String category;
 	
+	
 	public void setBId(int bId){
 		this.bId=bId;
 	}

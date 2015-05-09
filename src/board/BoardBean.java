@@ -18,13 +18,33 @@ public class BoardBean {
 	private BoardBean(){
 
 	}
-	public List boardMain(String category){
+	public int getBoardCount(){
+		int count=0;
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select count(*) from board")){
+			try(ResultSet rs=pstmt.executeQuery();){
+				if(rs.next()){
+					count=rs.getInt(1);
+				}
+				
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return count;
+	}
+	public List boardMain(String category,int start,int end){
 		List boardList=null;
 		BoardData board=null;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select bid,name,btitle,bdate,inquiry from board b join member m on m.id=b.uid where category=? order by bid desc");){
+				PreparedStatement pstmt=conn.prepareStatement("select bid,name,btitle,bdate,inquiry from board b join member m on m.id=b.uid where category=? order by bid desc limit ?,?");){
 
 			pstmt.setString(1, category);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
 
 			try( ResultSet rs=pstmt.executeQuery(); ){
 				if(rs.next()){
@@ -37,6 +57,7 @@ public class BoardBean {
 
 						board.setBDate(rs.getTimestamp("bdate"));
 						board.setInquiry(rs.getInt("inquiry"));
+						
 						boardList.add(board);
 
 					}while(rs.next());
