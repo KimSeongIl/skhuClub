@@ -20,7 +20,7 @@
 					
 					out.println("<tr>");
 					out.println("<td>"+board.getBId()+"</td>");
-					out.println("<td>"+board.getBTitle()+"</td>");
+					out.println("<td><a href='boardView.do?bid="+board.getBId()+"'>"+board.getBTitle()+"</a></td>");
 					out.println("<td>"+board.getUName()+"</td>");
 					out.println("<td>"+board.getBDate()+"</td>");
 					out.println("<td>"+board.getInquiry()+"</td>");

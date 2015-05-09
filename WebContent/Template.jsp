@@ -155,6 +155,7 @@
 					var loginTop=($(window).height()-$('#loginDiv').outerHeight())/2;
 					$('#loginDiv').css({'left':loginLeft,'top':loginTop,'display':'block'});
 					wrapMask();
+					$('#loginId').focus();
 				})
 				$("#loginClose").click(function(){
 					$('#layered,#loginDiv').css('display','none');
@@ -195,7 +196,7 @@
 			<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		</div><br><br>
 		<form class="form-inline" action="login.do" method="post">
-			<input type="text" class="form-control" placeholder="ID" name="id"><br><br>
+			<input id="loginId" type="text" class="form-control" placeholder="ID" name="id"><br><br>
 			<input type="password" class="form-control" placeholder="PW" name="pw"><br><br>
 			<input type="submit" value="로그인" class="btn btn-default">
 		</form>
