@@ -175,6 +175,8 @@
 					
 					
 				}
+				
+				
 			})
 	function wrapMask(){
 		
@@ -183,6 +185,22 @@
 		
 		$('#layered').css({'width':maskWidth,'height':maskHeight,'display':'block'});
 		
+	}
+	function boardSearch(category){
+		var bsv=$('#boardSearchValue').val().trim();
+		if($('#searchSelect').val()=='제목+내용'){
+			ss=1;
+		}
+		else{
+			ss=2;
+		}
+		
+		if(bsv==''){
+			alert('한글자 이상 입력하세요!')
+		}
+		else{
+			location.href="boardSearch.do?category="+category+"&search="+ss+"&value="+bsv;
+		}
 	}
 	
 	
