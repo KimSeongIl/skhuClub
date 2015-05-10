@@ -1,5 +1,6 @@
 ﻿<%@page import="java.util.*"%>
 <%@page import="board.BoardData"%>
+<%@page import="comment.CommentData" %>
 
 
 
@@ -15,15 +16,30 @@
 			<%
 				String category = (String) request.getParameter("category");
 				List boardList = (List) request.getAttribute("boardList");
+				List commentCount=(List)request.getAttribute("commentCount");
+				int count=0;
 				if (boardList != null) {
+					
 					for (int i = 0; i < boardList.size(); i++) {
 						BoardData board = (BoardData) boardList.get(i);
+						CommentData cd=null;
+						if(commentCount!=null){
+							cd=(CommentData)commentCount.get(i);
+						}
 
 						out.println("<tr>");
 						out.println("<td>" + board.getBId() + "</td>");
-						out.println("<td><a href='boardView.do?bid="
-								+ board.getBId() + "'>" + board.getBTitle()
-								+ "</a></td>");
+						if(cd!=null && cd.getBdcount()!=0){
+							out.println("<td><a href='boardView.do?bid="
+									+ board.getBId() + "'>" + board.getBTitle()
+									+" ["+cd.getBdcount()+"]"+ "</a></td>");
+						}
+						else{
+							out.println("<td><a href='boardView.do?bid="
+									+ board.getBId() + "'>" + board.getBTitle()
+									+ "</a></td>");
+						}
+						
 						out.println("<td>" + board.getUName() + "</td>");
 						out.println("<td>" + board.getBDate() + "</td>");
 						out.println("<td>" + board.getInquiry() + "</td>");

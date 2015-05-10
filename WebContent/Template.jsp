@@ -203,6 +203,24 @@
 		}
 	}
 	
+	function commentWrite(bid){
+		var commentContent=$('#commentContent').val();
+		$.post('commentWrite.aj',{bid:bid,bdcontent:commentContent},function(data){
+			
+			$('#comment').html(data);
+			
+			$('#commentContent').val('');
+		})
+	}
+	
+	function commentDelete(bdid,bid){
+		if(confirm('삭제하시겠습니까?')){
+			$.post('commentDelete.aj',{bdid:bdid,bid:bid},function(data){
+				$('#comment').html(data);
+			})
+		}
+	}
+	
 	
 </script>
 

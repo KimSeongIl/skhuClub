@@ -19,13 +19,13 @@ import action.CommandAction;
  * Servlet implementation class Calendar
  */
 @WebServlet("/Calendar")
-public class CalendarServlet extends HttpServlet {
+public class AjaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CalendarServlet() {
+    public AjaxServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +33,7 @@ public class CalendarServlet extends HttpServlet {
     
     public void init(ServletConfig config)throws ServletException{
     	
-    	String props=config.getInitParameter("calPropertyConfig");
+    	String props=config.getInitParameter("ajaxPropertyConfig");
     	
     	Properties pr=new Properties();
     	

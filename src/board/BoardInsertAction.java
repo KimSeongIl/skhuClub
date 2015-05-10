@@ -15,7 +15,7 @@ public class BoardInsertAction implements CommandAction{
 		String category=request.getParameter("category");
 		String bTitle=request.getParameter("btitle");
 
-		String bContent=request.getParameter("bcontent");
+		String bContent=request.getParameter("bcontent").replaceAll("\n", "<br>");
 		HttpSession session = request.getSession();
 		String id=(String)session.getAttribute("id");
 		
