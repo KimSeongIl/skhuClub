@@ -13,40 +13,54 @@
 			<th>날짜</th>
 			<th>조회수</th>
 			<%
-		
-			List boardList=(List)request.getAttribute("boardList");
-			if(boardList!=null){
-				for(int i=0; i<boardList.size();i++){
-					BoardData board=(BoardData)boardList.get(i);
-					
-					out.println("<tr>");
-					out.println("<td>"+board.getBId()+"</td>");
-					out.println("<td><a href='boardView.do?bid="+board.getBId()+"'>"+board.getBTitle()+"</a></td>");
-					out.println("<td>"+board.getUName()+"</td>");
-					out.println("<td>"+board.getBDate()+"</td>");
-					out.println("<td>"+board.getInquiry()+"</td>");
-					out.println("</tr>");
+				String category = (String) request.getParameter("category");
+				List boardList = (List) request.getAttribute("boardList");
+				if (boardList != null) {
+					for (int i = 0; i < boardList.size(); i++) {
+						BoardData board = (BoardData) boardList.get(i);
+
+						out.println("<tr>");
+						out.println("<td>" + board.getBId() + "</td>");
+						out.println("<td><a href='boardView.do?bid="
+								+ board.getBId() + "'>" + board.getBTitle()
+								+ "</a></td>");
+						out.println("<td>" + board.getUName() + "</td>");
+						out.println("<td>" + board.getBDate() + "</td>");
+						out.println("<td>" + board.getInquiry() + "</td>");
+						out.println("</tr>");
+					}
 				}
-			}
-			
-			
-		%>
+			%>
 		
 	</table>
 	<br>
 	<div id="paging">
 		<%
-		List paging=(List)request.getAttribute("paging");
-		
-		for(int i=0;i<paging.size();i++){
-			out.print(paging.get(i));
-		}
-		
+			List paging = (List) request.getAttribute("paging");
+
+			for (int i = 0; i < paging.size(); i++) {
+				out.print(paging.get(i));
+			}
 		%>
 	</div>
+	<select id="searchSelect">
+		<option>제목+내용</option>
+		<option>작성자</option>
+	</select>
 
-	<input type="button" class="btn btn-default-sm" value="글쓰기"
-		onclick="location.href='boardWrite.do'">
+	<script>
+		$(document).ready(function(){
+			$('#boardSearchValue').keyup(function(){
+				if(event.keyCode=='13'){
+					boardSearch('<%=category%>')
+				}
+			})
+		})
+		
+	</script>
+	<input type="search" id="boardSearchValue">
+	 <input id="boardSearch" type="button" value="검색" class="btn btn-default-sm" onclick="boardSearch('<%=category%>')"> 
+	 <input type="button" class="btn btn-default-sm" value="글쓰기" onclick="location.href='boardWrite.do'">
 </div>
 
 
