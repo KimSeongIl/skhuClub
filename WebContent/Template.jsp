@@ -220,7 +220,11 @@
 			})
 		}
 	}
-	
+	function fileDownload(){
+		
+		$('#downloadForm').submit();
+		
+	}
 	
 </script>
 

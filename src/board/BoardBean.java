@@ -184,15 +184,16 @@ public class BoardBean {
 
 		return boardList;
 	}
-	public void insertBoard(String category,String bTitle,String bContent,String uId){
+	public void insertBoard(String category,String bTitle,String bContent,String uId,String fileName){
 
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("insert into board(uid,btitle,bContent,category) values(?,?,?,?)");){
+				PreparedStatement pstmt=conn.prepareStatement("insert into board(uid,btitle,bContent,category,files) values(?,?,?,?,?)");){
 
 			pstmt.setString(1, uId);
 			pstmt.setString(2, bTitle);
 			pstmt.setString(3, bContent);
 			pstmt.setString(4, category);
+			pstmt.setString(5, fileName);
 			pstmt.executeUpdate();
 
 

@@ -1,6 +1,7 @@
 ﻿<%@page import="board.BoardData" %>
 <%@page import="comment.CommentData" %>
 <%@page import="java.util.*" %>
+<%@page import="java.io.*" %>
 <%  
 
 	BoardData board=(BoardData)request.getAttribute("board");
@@ -9,10 +10,18 @@
 	String name=board.getUName();
 	String btitle=board.getBTitle();
 	String bcontent=board.getBContent();
+	String files=board.getFiles();
 	String category=board.getCategory();
 	String suid=(String)session.getAttribute("id");
 	
-	
+	if(files==null){
+		files="";
+	}
+	else{
+		out.println("<form id='downloadForm' action='fileDownload.aj' method='post'>");
+		out.println("<input type='hidden' value='"+files+"' name='fileName'>");
+		out.println("</form>");
+	}
 
 %>
 <div id="article">
@@ -25,6 +34,10 @@
 		<tr>
 			<th>작성자</th>
 			<td><%=name %></td>
+		</tr>
+		<tr>
+		<th>파일</th>
+		<td><a onclick="fileDownload()"><%=files%></a></td>
 		</tr>
 		<tr>
 			<th>내용</th>

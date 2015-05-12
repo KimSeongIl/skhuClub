@@ -17,7 +17,7 @@
 %>
 	<div id="article">
 		<%if (board==null){ %>
-		<form action="boardInsert.do" method="post">
+		<form action="boardInsert.do" method="post" enctype="multipart/form-data">
 		<%}else{ %>
 		<form action="boardUpdateSuccess.do?bid=<%=bid %>" method="post">
 		<%} %>
@@ -25,6 +25,10 @@
 				<tr>
 					<th>제목</th>
 					<td><input type="text" placeholder="제목을 입력하세요" name="btitle" value="<%=btitle%>"></td>
+				</tr>
+				<tr>
+					<th>파일</th>
+					<td><input type="file" name="uploadFile"></td>
 				</tr>
 				<tr>
 					<th>내용</th>
