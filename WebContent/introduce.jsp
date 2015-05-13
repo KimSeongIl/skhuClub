@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                  <h1>Item name</h1>
                 <div class="img" style="width:350px; float:left;">
-                    <img src="./img/s1.jpg">
+                    <img src="">
                 </div>
                 <div class="detail" style="padding:10px 10px 10px 500px;">
                     <p><b><h2>name</h2> </b></p>
@@ -36,20 +36,17 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" >
 <nav class="navbar navbar-default">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-    
-      </button>
+     
       <a class="navbar-brand" href="#">한비</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div  id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#about">동아리 소개<span class="sr-only">(current)</span></a></li>
         <li ><a href="#services">활동 및 행사</a></li>
@@ -74,10 +71,7 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-       
-      </button>
+     
       <a class="navbar-brand" href="#">한비</a>
     </div>
 
@@ -95,22 +89,20 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>활동 및 행사 부분</h1>
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact">
 <nav class="navbar navbar-default">
 
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        
-      </button>
+      
       <a class="navbar-brand" href="#">한비</a>
     </div>
 
@@ -128,6 +120,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>활동사진 </h1>
+                    
                 </div>
             </div>
         </div>
