@@ -23,12 +23,12 @@ public class BoardInsertAction implements CommandAction{
 		try{
 		MultipartRequest multi=new MultipartRequest(request,uploads,5*1024*1024,"UTF-8",new DefaultFileRenamePolicy());
 		Enumeration params=multi.getFileNames();
-		System.out.println(multi);
+		
 		
 		 String formName=(String)params.nextElement(); // 자료가 많을 경우엔 while 문을 사용
 	     fileName=multi.getFilesystemName(formName); 
 			
-			System.out.println(fileName);
+			
 		
 		category=multi.getParameter("category");
 		bTitle=multi.getParameter("btitle");

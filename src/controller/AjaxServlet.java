@@ -59,6 +59,7 @@ public class AjaxServlet extends HttpServlet {
     		
     		String command=(String)keyIter.next();
     		String className=pr.getProperty(command);
+    		
     		try{
     			Class commandClass=Class.forName(className);
     			
@@ -96,6 +97,7 @@ public class AjaxServlet extends HttpServlet {
 		CommandAction com=null;
 		try{
 			String command=request.getRequestURI();
+			
 			if(command.indexOf(request.getContextPath())==0){
 				command=command.substring(request.getContextPath().length()+1);
 			}

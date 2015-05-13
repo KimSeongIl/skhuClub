@@ -122,7 +122,7 @@
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
-
+<script type="text/javascript" src="assets/js/HuskyEZCreator.js" charset="utf-8"></script>
 
 
 
