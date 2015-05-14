@@ -1,9 +1,12 @@
-function signCheck(){
+
+function memberSubmit(check){
+	
 //	아이디 입력여부 검사 
-	if(document.s.id.value=="")
+	if(check.id!=null){
+	if(check.id.value=="")
 	{
 		alert("아이디를 입력하지 않았습니다.")
-		document.s.id.focus()
+		check.id.focus()
 		return
 	}
 
@@ -13,21 +16,21 @@ function signCheck(){
 	var idCheck= /^[A-Za-z0-9+]{6,12}$/;
 
 
-	if(!idCheck.test(document.s.id.value))
+	if(!idCheck.test(check.id.value))
 	{
 
 		alert("아이디는 영어와 숫자만 입력해주세요.(글자수는 6~12)")
-		document.s.id.focus();
+		check.id.focus();
 		return
 	}
-
-
+	}
+	
 
 	//비밀번호 입력여부 검사
-	if(document.s.password.vlaue="")
+	if(check.password.vlaue="")
 	{
 		alert("비밀번호를 입력하지 않았습니다")
-		document.s.password.focus();
+		check.password.focus();
 		return
 
 	}
@@ -38,36 +41,36 @@ function signCheck(){
 
 
 
-	if(!pwCheck.test(document.s.password.value))
+	if(!pwCheck.test(check.password.value))
 	{
 
 
-		alert("비밀번호는 영어와 숫자의 조합으로 해주세요.(글자수는 6~12)")
-		document.s.password.focus();
+		alert("비밀번호는 영어,숫자,특수문자 조합으로 해주세요.(글자수는 6~12)")
+		check.password.focus();
 		return
 
 
 	}
 
-
-	alert("ccc")
+	
+	
 	// 비밀번호 일치여부 검사 
-	if (document.s.password.value!=document.s.passwordCheck.value)
+	if (check.password.value!=check.passwordCheck.value)
 	{
 		alert("비밀번호가 일치하지 않습니다")
-		document.s.password.value=""
-			document.s.passwordCheck.value=""
-				document.s.password.focus()
+		check.password.value=""
+			check.passwordCheck.value=""
+				check.password.focus()
 				return
 	}
-
+	
 
 	//학번 입력여부 검사 
-
-	if(document.s.studentNum.value=="")
+	if(check.studentNum!=null){
+	if(check.studentNum.value=="")
 	{
 		alert("학번을 입력하지 않았습니다.")
-		document.s.id.focus()
+		check.id.focus()
 		return
 	}
 
@@ -76,31 +79,31 @@ function signCheck(){
 	var studentNumCheck= /^[0-9+]{6,12}$/;
 
 
-	if(!studentNumCheck.test(document.s.studentNum.value))
+	if(!studentNumCheck.test(check.studentNum.value))
 	{
 
 		alert("학번은 숫자만 가능합니다")
-		document.s.studentNum.focus();
+		check.studentNum.focus();
 		return
 
 	}
-	
+	}
 	
 	//이름입력 여부 검사 
-	if(document.s.name.value=="")
+	if(check.name.value=="")
 	{
 		alert("이름을 입력하지 않았습니다.")
-		document.s.id.focus()
+		check.id.focus()
 		return
 	}
 
-	for (i=0;i<document.s.name.value.length ;i++ )
+	for (i=0;i<check.name.value.length ;i++ )
 	{
-		var ch=document.s.name.value.charAt(i)
+		var ch=check.name.value.charAt(i)
 		if ((ch>='0' && ch<='9') && (ch>='a' && ch<='z'))
 		{
 			alert ("이름는 소문자, 숫자만 입력불가능합니다.")
-			document.s.id.focus()
+			check.id.focus()
 			
 			return
 		}
@@ -111,10 +114,10 @@ function signCheck(){
 	
 	
 	//휴대폰번호 입력여부 검사 
-	if(document.s.phone.value=="")
+	if(check.phone.value=="")
 	{
 		alert("휴대폰 번호를 입력하지 않았습니다.")
-		document.s.id.focus()
+		check.id.focus()
 		return
 	}
 
@@ -122,17 +125,18 @@ function signCheck(){
 
 	var phoneCheck = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
 
-	if(!phoneCheck.test(document.s.phone.value))
+	if(!phoneCheck.test(check.phone.value))
 	{
 		alert("전화번호 형식에 맞지 않습니다 ");
-		document.s.phone.focus()
+		check.phone.focus()
 		return
 	}
+	
 //	이메일 입력 여부 검사
-	if(document.s.email.value=="")
+	if(check.email.value=="")
 	{
 		alert("이메일을 입력하지 않았습니다.")
-		document.s.id.focus()
+		check.id.focus()
 		return
 	}
 
@@ -140,110 +144,17 @@ function signCheck(){
 	var emailCheck= /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
 
-	if(!emailCheck.test(document.s.email.value))
+	if(!emailCheck.test(check.email.value))
 	{
 
 		alert("이메일 형식에 맞지 않습니다 ")
-		document.s.email.focus();
+		check.email.focus();
 		return
 
 	}
 
 	alert("회원가입을 축하드립니다")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/*	아이디 입력여부 검사
-	if(document.s.id.value=="")
-	{
-		alert("아이디를 입력하지 않았습니다.")
-		document.s.id.focus()
-		return
-	}
-//	아이디 유효성 검사 (영문소문자, 숫자만 허용)
-	for (i=0;i<document.s.id.value.length ;i++ )
-	{
-		var ch=document.s.id.value.charAt(i)
-		if (!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z'))
-		{
-			alert ("아이디는 소문자, 숫자만 입력가능합니다.")
-			document.s.id.focus()
-			document.s.id.select()
-			return
-		}
-	}
-//	아이디에 공백 사용하지 않기
-	if (document.s.id.value.indexOf(" ")>=0)
-	{
-		alert("아이디에 공백을 사용할 수 없습니다.")
-		document.s.id.focus()
-		document.s.id.select()
-		return
-	}
-//	아이디 길이 체크 (6~12자)
-	if (document.s.id.value.length<6 || document.s.id.value.length>12)
-	{
-		alert ("아이디를 6~12자까지 입력해주세요.")
-		document.s.id.focus()
-		//document.s.id.select()
-		return
-	}
-//	비밀번호 입력여부 체크
-	if(document.s.password.value=="")
-	{
-		alert("비밀번호를 입력하지 않았습니다.")
-		document.s.password.focus()
-		return
-	}
-//	비밀번호 길이 체크(4~8자 까지 허용)
-	if (document.s.password.value.length<4 || document.s.password.value.length>8)
-	{
-		alert ("비밀번호를 4~8자까지 입력해주세요.")
-		document.s.password.focus()
-		//document.s.password.select()
-		return
-	}
-
-//	비밀번호와 비밀번호 확인 일치여부 체크
-	if (document.s.password.value!=document.s.passwordCheck.value)
-	{
-		alert("비밀번호가 일치하지 않습니다")
-		document.s.password.value=""
-			document.s.passwordCheck.value=""
-				document.s.password.focus()
-				return
-	}
-
-
-	//학번에 숫자말고 다른 문자를 입력하였는 검사
-
-
-		alert(isNaN(document.s.studentNum.value))*/
-
-
-
-
-
-
-
+	check.submit();
 
 }

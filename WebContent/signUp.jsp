@@ -6,7 +6,7 @@
 	<div id="article">
 	<b>회원가입</b><br>
 	<hr>
-	<form action="" name="s" method="post">
+	<form action="" name="signupForm" method="post">
     아이디<br>
 	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="id"><br>
 	비밀번호<br>
@@ -25,7 +25,7 @@
 	<hr>
 	
 
-<button type="button" class="btn btn-primary" id="join" onclick="signCheck()">가입하기</button>
+<button type="button" class="btn btn-primary" id="join" onclick="memberSubmit(this.form)">가입하기</button>
 	
 	</form>
 	</div>

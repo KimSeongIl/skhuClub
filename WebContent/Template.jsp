@@ -226,14 +226,14 @@
 		
 	}
 	function memberModify(){
-		$('input[name=mpw],input[name=mname],input[name=mphone],input[name=memail]').removeAttr("readonly");
+		$('input[name=password],input[name=name],input[name=phone],input[name=email]').removeAttr("readonly");
 		
-		$('#mpw2').append("비밀번호확인: <input type='password' name='mpw2' class='form-control'><br>");
+		$('#mpw2').append("비밀번호확인: <input type='password' name='passwordCheck' class='form-control'><br>");
 		$('#mreset').append("<input type='button' value='취소' class='btn btn-default-sm' onclick='modifyReset()'>");
-		$('#modifyBtn').attr('onclick','test1()');
+		$('#modifyBtn').attr('onclick','memberSubmit(this.form)');
 	}
-	function test1(){
-		alert(1)
+	function modifySubmit(){
+		
 	}
 	function modifyReset(){
 		
@@ -245,7 +245,7 @@
 		});  
 
 		
-		$('input[name=mpw],input[name=mname],input[name=mphone],input[name=memail]').attr("readonly");
+		$('input[name=password],input[name=name],input[name=phone],input[name=email]').attr("readonly");
 		
 		$('#modifyBtn').attr('onclick','memberModify()');
 		
