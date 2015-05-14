@@ -122,7 +122,7 @@
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="assets/js/bootstrap.js"></script>
-
+<script type="text/javascript" src="assets/js/HuskyEZCreator.js" charset="utf-8"></script>
 
 
 
@@ -203,6 +203,28 @@
 		}
 	}
 	
+	function commentWrite(bid){
+		var commentContent=$('#commentContent').val();
+		$.post('commentWrite.aj',{bid:bid,bdcontent:commentContent},function(data){
+			
+			$('#comment').html(data);
+			
+			$('#commentContent').val('');
+		})
+	}
+	
+	function commentDelete(bdid,bid){
+		if(confirm('삭제하시겠습니까?')){
+			$.post('commentDelete.aj',{bdid:bdid,bid:bid},function(data){
+				$('#comment').html(data);
+			})
+		}
+	}
+	function fileDownload(){
+		
+		$('#downloadForm').submit();
+		
+	}
 	
 </script>
 

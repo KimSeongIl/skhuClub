@@ -3,7 +3,10 @@ package board;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 import action.CommandAction;
+import comment.CommentBean;
 
 import java.util.*;
 
@@ -36,6 +39,8 @@ public class BoardAction implements CommandAction{
 		int pre=(int)temp*5;
 		int next=((int)temp+1)*5;
 		List boardList=board.boardMain(category,start,end);
+		CommentBean comment=CommentBean.getInstance();
+		List commentCount=comment.commentCount(start,end);
 		List paging=new ArrayList();
 		
 		paging.add("<a href=board.do?category="+category+">처음</a> &nbsp;");
@@ -58,6 +63,7 @@ public class BoardAction implements CommandAction{
 		paging.add("<a href=board.do?category="+category+"&pnum="+page+">마지막</a> &nbsp;");
 		
 		request.setAttribute("boardList", boardList);
+		request.setAttribute("commentCount", commentCount);
 		request.setAttribute("count", count);
 		request.setAttribute("paging", paging);
 		

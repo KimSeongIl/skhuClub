@@ -1,9 +1,9 @@
 package board;
 
 import java.sql.*;
-import java.util.ArrayList;
 
-import calendar.CalendarData;
+
+
 import conn.Conn;
 import java.util.*;
 
@@ -184,15 +184,16 @@ public class BoardBean {
 
 		return boardList;
 	}
-	public void insertBoard(String category,String bTitle,String bContent,String uId){
+	public void insertBoard(String category,String bTitle,String bContent,String uId,String fileName){
 
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("insert into board(uid,btitle,bContent,category) values(?,?,?,?)");){
+				PreparedStatement pstmt=conn.prepareStatement("insert into board(uid,btitle,bContent,category,files) values(?,?,?,?,?)");){
 
 			pstmt.setString(1, uId);
 			pstmt.setString(2, bTitle);
 			pstmt.setString(3, bContent);
 			pstmt.setString(4, category);
+			pstmt.setString(5, fileName);
 			pstmt.executeUpdate();
 
 
@@ -200,13 +201,24 @@ public class BoardBean {
 			e.printStackTrace();
 		}
 	}
-	public BoardData viewBoard(String bId){
+	public void increaseInquiry(int bId){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update board set inquiry=inquiry+1 where bid=?")){
+			
+			pstmt.setInt(1, bId);
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+	}
+	public BoardData viewBoard(int bId){
 
 		BoardData board=null;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select bid,uid,btitle,bcontent,bdate,files,name,category from board b join member m on b.uid=m.id where bid=?");){
+				PreparedStatement pstmt=conn.prepareStatement("select bid,uid,btitle,bcontent,bdate,files,name,category,inquiry from board b join member m on b.uid=m.id where bid=?");){
 
-			pstmt.setString(1, bId);
+			pstmt.setInt(1, bId);
 
 			try( ResultSet rs=pstmt.executeQuery(); ){
 				if(rs.next()){
@@ -221,7 +233,8 @@ public class BoardBean {
 					board.setFiles(rs.getString("files"));
 					board.setUName(rs.getString("name"));
 					board.setCategory(rs.getString("category"));
-
+					
+					
 
 
 				}

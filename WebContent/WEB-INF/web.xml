@@ -18,17 +18,17 @@
   
   
   <servlet>
-    <servlet-name>CalendarServlet</servlet-name>
-    <servlet-class>controller.CalendarServlet</servlet-class>
+    <servlet-name>AjaxServlet</servlet-name>
+    <servlet-class>controller.AjaxServlet</servlet-class>
     <init-param>
-      <param-name>calPropertyConfig</param-name>
-      <param-value>/WEB-INF/Calendar.properties</param-value>
+      <param-name>ajaxPropertyConfig</param-name>
+      <param-value>/WEB-INF/Ajax.properties</param-value>
     </init-param>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>CalendarServlet</servlet-name>
-    <url-pattern>*.cal</url-pattern>
+    <servlet-name>AjaxServlet</servlet-name>
+    <url-pattern>*.aj</url-pattern>
   </servlet-mapping>
   
     <security-constraint>

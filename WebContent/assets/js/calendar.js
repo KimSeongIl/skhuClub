@@ -14,7 +14,7 @@ $(document).ready(function() {
 		selectable:true,
 		selectHelper:true,
 		
-		insertView: $.post('view.cal',function(data){
+		insertView: $.post('view.aj',function(data){
 			
 			a=data.split("<br>")
 			
@@ -74,7 +74,7 @@ $(document).ready(function() {
 			var left=(screen.availWidth/2)-(200/2);
 			
 			
-			var se=window.open('select.cal?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=250,height=150,top='+top+',left='+left);
+			var se=window.open('select.aj?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=250,height=150,top='+top+',left='+left);
 
 
 			
@@ -101,12 +101,12 @@ $(document).ready(function() {
 			 		end=event.start;
 			 	}
 
-			 	$.post('update.cal',{id:event.id,start:String(event.start),end:String(end)})
+			 	$.post('update.aj',{id:event.id,start:String(event.start),end:String(end)})
 
 			 },
 			 eventResize:function(event,jsEvent,ui,view){
 
-			 	$.post('update.cal',{id:event.id,start:String(event.start),end:String(event.end)})
+			 	$.post('update.aj',{id:event.id,start:String(event.start),end:String(event.end)})
 			 },
 			 eventClick:function(event,element){
 			 	if(uauth=='관리자'){
@@ -115,7 +115,7 @@ $(document).ready(function() {
 			 	
 			 	if(confirm('삭제하시겠습니까?')){
 			 		
-			 		$.post('delete.cal',{id:event.id})
+			 		$.post('delete.aj',{id:event.id})
 			 		$('#calendar').fullCalendar('removeEvents',event.id);
 			 	}
 			 }
@@ -139,7 +139,7 @@ function select(input){
 	start=st.slice(0,29)+'+0000';
 	end=en.slice(0,29)+'+0000';
 	
-	$.post('insert.cal',{title:ti,start:String(start),end:String(end),color:co,user:uauth},function(data){
+	$.post('insert.aj',{title:ti,start:String(start),end:String(end),color:co,user:uauth},function(data){
 		start=new Date(start.slice(0,29)).toISOString();
 		end=new Date(end.slice(0,29)).toISOString();
 		if(start.slice(11,19)=='00:00:00' && end.slice(11,19)=='00:00:00'){
