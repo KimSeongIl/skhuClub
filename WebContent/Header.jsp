@@ -16,6 +16,7 @@
 <%  }else{
 %>
 	<%=name%>님 환영합니다 <br>
+	<span id="myPage"><a href="myPage.do">마이페이지</a></span>
 	<span id="logout"><a href="logout.do">로그아웃</a></span>
 <%
 }

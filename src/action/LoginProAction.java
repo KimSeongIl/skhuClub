@@ -3,7 +3,7 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import member.MemberBean;
+import member.MemberData;
 import logon.LogonBean;
 
 public class LoginProAction implements CommandAction{
@@ -14,7 +14,7 @@ public class LoginProAction implements CommandAction{
 		String pw=request.getParameter("pw");
 		HttpSession session = request.getSession();
 		LogonBean dbPro=LogonBean.getInstance();
-		MemberBean check=dbPro.userCheck(id, pw);
+		MemberData check=dbPro.userCheck(id, pw);
 		
 		request.setAttribute("check", check);
 		

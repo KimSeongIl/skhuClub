@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="member.MemberBean"%>
+	pageEncoding="UTF-8" import="member.MemberData"%>
 	<%
-		MemberBean check=(MemberBean)request.getAttribute("check");
+		MemberData check=(MemberData)request.getAttribute("check");
 		if(check!=null){
 			String id=check.getId();
 			String name=check.getName();
