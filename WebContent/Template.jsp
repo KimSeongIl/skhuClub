@@ -225,6 +225,34 @@
 		$('#downloadForm').submit();
 		
 	}
+	function memberModify(){
+		$('input[name=mpw],input[name=mname],input[name=mphone],input[name=memail]').removeAttr("readonly");
+		
+		$('#mpw2').append("비밀번호확인: <input type='password' name='mpw2' class='form-control'><br>");
+		$('#mreset').append("<input type='button' value='취소' class='btn btn-default-sm' onclick='modifyReset()'>");
+		$('#modifyBtn').attr('onclick','test1()');
+	}
+	function test1(){
+		alert(1)
+	}
+	function modifyReset(){
+		
+		$('#mpw2').html('');
+		
+		$("form").each(function() {  
+		   if(this.id == "modifyForm") 
+			   this.reset();  
+		});  
+
+		
+		$('input[name=mpw],input[name=mname],input[name=mphone],input[name=memail]').attr("readonly");
+		
+		$('#modifyBtn').attr('onclick','memberModify()');
+		
+		$('#mreset').html('');
+		
+		
+	}
 	
 </script>
 

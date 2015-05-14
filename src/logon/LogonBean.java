@@ -1,7 +1,7 @@
 package logon;
 
 import java.sql.*;
-import member.MemberBean;
+import member.MemberData;
 import conn.Conn;
 
 public class LogonBean {
@@ -17,9 +17,9 @@ public class LogonBean {
 	
 	
 	
-	public MemberBean userCheck(String id,String pw) throws Exception{
+	public MemberData userCheck(String id,String pw) throws Exception{
 		
-		MemberBean bean = null;
+		MemberData bean = null;
 	
 		try(
 				Connection conn=Conn.getConnection();
@@ -31,7 +31,7 @@ public class LogonBean {
 			
 			try( ResultSet rs=pstmt.executeQuery(); ){
 				if(rs.next()){
-					bean = new MemberBean();
+					bean = new MemberData();
 					bean.setId(rs.getString("id"));
 					bean.setName(rs.getString("name"));
 					bean.setAuthority(rs.getString("authority"));
