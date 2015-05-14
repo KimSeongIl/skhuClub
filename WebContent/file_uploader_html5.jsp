@@ -11,6 +11,7 @@
 String sFileInfo = "";
 //파일명을 받는다 - 일반 원본파일명
 String filename = request.getHeader("file-name");
+filename=URLDecoder.decode(filename,"UTF-8");
 //파일 확장자
 String filename_ext = filename.substring(filename.lastIndexOf(".")+1);
 //확장자를소문자로 변경
@@ -66,7 +67,7 @@ sFileInfo += "&bNewLine=true";
 // img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
 sFileInfo += "&sFileName="+ filename;;
 sFileInfo += "&sFileURL="+"assets/uploads/"+realFileNm;
-out.println(sFileInfo);
+out.println(URLEncoder.encode(sFileInfo,"UTF-8"));
 
 }
 %>
