@@ -230,11 +230,12 @@
 		
 		$('#mpw2').append("비밀번호확인: <input type='password' name='passwordCheck' class='form-control'><br>");
 		$('#mreset').append("<input type='button' value='취소' class='btn btn-default-sm' onclick='modifyReset()'>");
+		$('input[name=password]').focus();
+		$('#modifyBtn').removeAttr('onclick');
 		$('#modifyBtn').attr('onclick','memberSubmit(this.form)');
 	}
-	function modifySubmit(){
-		
-	}
+	
+	
 	function modifyReset(){
 		
 		$('#mpw2').html('');
@@ -246,7 +247,7 @@
 
 		
 		$('input[name=password],input[name=name],input[name=phone],input[name=email]').attr("readonly");
-		
+		$('#modifyBtn').removeAttr('onclick');
 		$('#modifyBtn').attr('onclick','memberModify()');
 		
 		$('#mreset').html('');

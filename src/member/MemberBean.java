@@ -14,7 +14,7 @@ public class MemberBean {
 		
 	}
 	
-	public MemberData getUserData(String id){
+	public MemberData getMemberData(String id){
 		MemberData md=null;
 		try(Connection conn=Conn.getConnection();
 				PreparedStatement pstmt=conn.prepareStatement("select * from member where id=?");){
@@ -46,5 +46,20 @@ public class MemberBean {
 			e.printStackTrace();
 		}
 		return md;
+	}
+	
+	public void modifyMember(MemberData md){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update member set password=?,name=?,phone=?,email=? where id=?");){
+			
+			pstmt.setString(1, md.getPw());
+			pstmt.setString(2, md.getName());
+			pstmt.setString(3, md.getPhone());
+			pstmt.setString(4, md.getEmail());
+			pstmt.setString(5, md.getId());
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

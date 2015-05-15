@@ -6,8 +6,8 @@
 	<%
 		MemberData member=(MemberData)request.getAttribute("member");
 	%>
-	<form id="modifyForm" action="d" method="post">
-	아이디: <input type="text" value="<%=member.getId() %>" class="form-control" readonly><br>
+	<form id="modifyForm"  method="post">
+	아이디: <input type="text" name="uid" value="<%=member.getId() %>" class="form-control" readonly><br>
 	비밀번호: <input type="password" name="password" value="<%=member.getPw() %>" class="form-control" readonly><br>
 	<span id="mpw2"></span>
 	이름: <input type="text" name="name" value="<%=member.getName() %>" class="form-control" readonly><br>
