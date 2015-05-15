@@ -35,7 +35,7 @@
 		</ul>
 
 		<ul class="nav navbar-nav">
-			<li><a href="#">Link</a></li>
+			<li><a href="board.do?category=free">자유게시판</a></li>
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown">커뮤니티 <b class="caret"></b></a>
 				<ul class="dropdown-menu">

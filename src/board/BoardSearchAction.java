@@ -35,11 +35,11 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
 			boardList=board.boardSearch(category,value,start,end);
 		}
 		else if(ss==2){
-			System.out.println(1);
+			
 			count=board.getSearchNameCount(category, value);
 			
 			boardList=board.boardSearchName(category, value, start, end);
-			System.out.println(2);
+			
 		}
 		
 		if(count==0){

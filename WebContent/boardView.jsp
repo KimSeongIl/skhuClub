@@ -46,8 +46,12 @@
 	</table>
 	<br>
 	<% if(uid.equals(suid)){ %>
+	<form action="boardUpdate.do" method="post">
+		<input type="hidden" name="bid" value="<%=bid %>">
+		<input type="hidden" name="category" value="<%=category %>">
+		<input type="submit" class="btn btn-default-sm" value="수정" ">
+	</form>
 	
-	<input type="button" class="btn btn-default-sm" value="수정" onclick="location.href='boardUpdate.do?bid=<%=bid%>'">
 	<form action="boardDelete.do" method="post">
 		<input type="hidden" name="bid" value="<%=bid %>">
 		<input type="hidden" name="category" value="<%=category %>">

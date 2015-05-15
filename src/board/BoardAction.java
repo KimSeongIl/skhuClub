@@ -22,7 +22,8 @@ public class BoardAction implements CommandAction{
 		
 		
 		BoardBean board=BoardBean.getInstance();
-		double count=board.getBoardCount();
+		double count=board.getBoardCount(category);
+		
 		if(count==0){
 			count=1;
 		}
@@ -40,7 +41,7 @@ public class BoardAction implements CommandAction{
 		int next=((int)temp+1)*5;
 		List boardList=board.boardMain(category,start,end);
 		CommentBean comment=CommentBean.getInstance();
-		List commentCount=comment.commentCount(start,end);
+		List commentCount=comment.commentCount(start,end,category);
 		List paging=new ArrayList();
 		
 		paging.add("<a href=board.do?category="+category+">처음</a> &nbsp;");

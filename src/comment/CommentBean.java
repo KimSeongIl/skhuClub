@@ -15,12 +15,13 @@ public class CommentBean {
 
 	}
 
-	public List commentCount(int start,int end){
+	public List commentCount(int start,int end,String category){
 		List commentCount=new ArrayList();
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select b.bid,count(bdid) from board_comment c right outer join board b on c.bid=b.bid group by bid order by bid desc limit ?,?");){
-				pstmt.setInt(1, start);
-				pstmt.setInt(2, end);
+				PreparedStatement pstmt=conn.prepareStatement("select b.bid,count(bdid) from board_comment c right outer join board b on c.bid=b.bid where category=? group by bid  order by bid desc limit ?,?");){
+				pstmt.setString(1, category);
+				pstmt.setInt(2, start);
+				pstmt.setInt(3, end);
 			try(ResultSet rs=pstmt.executeQuery();){
 				if(rs.next()){
 					do{
