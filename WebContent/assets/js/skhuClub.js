@@ -46,7 +46,7 @@
 					
 				}
 				
-				
+				$('#clubList').load('clubList.aj');
 			})
 	function wrapMask(){
 		
@@ -116,7 +116,7 @@
 		});  
 
 		
-		$('input[name=password],input[name=name],input[name=phone],input[name=email]').attr("readonly");
+		$('input[name=password],input[name=name],input[name=phone],input[name=email]').attr("readonly",true);
 		$('#modifyBtn').removeAttr('onclick');
 		$('#modifyBtn').attr('onclick','memberModify()');
 		
@@ -124,4 +124,13 @@
 		
 		
 	}
+	
+	function clubList(){
+		$('#clubList').css('display','block');
+	}
+	function clubListClose(){
+		$('#clubList').css('display','none');
+	}
+		
+	
 	

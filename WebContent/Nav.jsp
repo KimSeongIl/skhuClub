@@ -16,7 +16,7 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
-				data-toggle="dropdown">총동연</a>
+				data-toggle="dropdown">일정</a>
 				<ul class="dropdown-menu">
 					<li><a href="schedule.do">동아리 일정</a></li>
 					<li><a href="board.do?category=notice">공지사항</a></li>
@@ -24,7 +24,7 @@
 				</ul></li>
 
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
-				data-toggle="dropdown">동아리</a>
+				data-toggle="dropdown" onclick="clubList()">동아리</a>
 				<ul class="dropdown-menu">
 					<li><a href="#">꾼</a></li>
 					<li><a href="#">한비</a></li>
@@ -49,4 +49,8 @@
 	<!-- /.navbar-collapse -->
 
 </nav>
+<div id="clubList">
+
+</div>
 <br>
+

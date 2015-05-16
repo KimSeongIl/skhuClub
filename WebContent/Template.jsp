@@ -39,6 +39,7 @@
 		margin: auto;
 		border: 1px solid black;
 	}
+	
 }
 
 @media ( max-width :767px) {
@@ -48,6 +49,7 @@
 		margin: auto;
 		border: 1px solid black;
 	}
+	
 }
 
 #footer {
@@ -94,7 +96,7 @@
 	
 	display:none;
 }
-#loginDiv{
+#loginDiv,#addClubDiv{
 	position:absolute;
 	left:0;
 	top:0;
@@ -115,6 +117,15 @@
 	width:400px;
 	
 }
+#clubList{
+	
+	border:1px solid black;
+	display:none;
+	max-width:800px;
+	margin:auto;
+	margin-top:0;
+}
+
 .fc-sun{color:red;}
 .fc-sat {color:#007dc3}
 </style>
