@@ -6,7 +6,7 @@
 	<div id="article">
 	<b>회원가입</b><br>
 	<hr>
-	<form action="" name="signupForm" method="post">
+	<form action="insertMember.do" name="signupForm" method="post">
     아이디<br>
 	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="id"><br>
 	비밀번호<br>

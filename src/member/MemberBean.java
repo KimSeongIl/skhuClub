@@ -2,6 +2,8 @@ package member;
 
 import conn.Conn;
 import java.sql.*;
+import java.util.*;
+
 
 public class MemberBean {
 
@@ -47,4 +49,41 @@ public class MemberBean {
 		}
 		return md;
 	}
+	
+	
+	public void insertMember(MemberData mem){
+		
+		String id=mem.getId();
+		String password=mem.getPw();
+		int studentNum=mem.getSNum();
+		String name=mem.getName();
+		String phone=mem.getPhone();
+		String email=mem.getEmail();
+		
+		try(
+			//디비 연결 
+			Connection conn=Conn.getConnection();
+			PreparedStatement pstmt=conn.prepareStatement("inset into member(id,password,studentNum,name,phone,email) values(?,?,?,?,?,?)");
+				//쿼리문 실행	
+				//디비 인젝션을 방지 
+		){
+			pstmt.setString(1, id);
+			pstmt.setString(2,password);
+			pstmt.setInt(3, studentNum);
+			pstmt.setString(4, name);
+			pstmt.setString(5, phone);
+			pstmt.setString(6,email);
+			pstmt.executeUpdate();//executeUpdate()는 insert delete update 명령문을 이용할때 사용 
+			
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			
+		}
+		
+	
+	}
+	
+	
 }
