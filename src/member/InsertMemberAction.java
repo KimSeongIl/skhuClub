@@ -36,7 +36,7 @@ public class InsertMemberAction implements CommandAction{
 	
 		
 		
-		return "singUp.jsp";
+		return "Main.jsp";
 	}
 
 }

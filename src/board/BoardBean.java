@@ -18,10 +18,11 @@ public class BoardBean {
 	private BoardBean(){
 
 	}
-	public int getBoardCount(){
+	public int getBoardCount(String category){
 		int count=0;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select count(*) from board")){
+				PreparedStatement pstmt=conn.prepareStatement("select count(*) from board where category=?")){
+				pstmt.setString(1, category);
 			try(ResultSet rs=pstmt.executeQuery();){
 				if(rs.next()){
 					count=rs.getInt(1);
@@ -118,7 +119,7 @@ public class BoardBean {
 	public List boardSearchName(String category,String value,int start,int end){
 		List boardList=null;
 		BoardData board=null;
-		System.out.println(value);
+		
 		try(Connection conn=Conn.getConnection();
 				PreparedStatement pstmt=conn.prepareStatement("select bid,name,btitle,bdate,inquiry from board b join member m on m.id=b.uid where category=? and name like ? order by bid desc limit ?,?");){
 

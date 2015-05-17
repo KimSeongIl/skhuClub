@@ -5,6 +5,7 @@
 		out.println("<script>alert('로그인 해주세요!')</script>");
 		out.println("<script>location.href='main.do'</script>");
 	}
+	String category=request.getParameter("category");
 	BoardData board=(BoardData)request.getAttribute("board");
 	String btitle="";
 	String bcontent="";
@@ -35,7 +36,7 @@
 					<td><textarea name="bcontent" id="ir1" rows="10" cols="100" style="width:100%; height:300px; display:none;"><%=bcontent %></textarea>
 				</tr>
 			</table>
-			<input type="hidden" name="category" value="notice">
+			<input type="hidden" name="category" value="<%=category%>">
 			<input type="submit" class="btn btn-default-sm" value="쓰기" onclick="if($('input[name=btitle]').val().trim()==''){
 				alert('제목을 입력하세요');
 			return false;

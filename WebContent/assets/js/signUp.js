@@ -1,12 +1,12 @@
 
 function memberSubmit(check){
-	
+
 //	아이디 입력여부 검사 
-	if(check.id!=null){
-	if(check.id.value=="")
+	if(check.uid!=null){
+	if(check.uid.value=="")
 	{
 		alert("아이디를 입력하지 않았습니다.")
-		check.id.focus()
+		check.uid.focus()
 		return
 	}
 
@@ -16,11 +16,11 @@ function memberSubmit(check){
 	var idCheck= /^[A-Za-z0-9+]{6,12}$/;
 
 
-	if(!idCheck.test(check.id.value))
+	if(!idCheck.test(check.uid.value))
 	{
 
 		alert("아이디는 영어와 숫자만 입력해주세요.(글자수는 6~12)")
-		check.id.focus();
+		check.uid.focus();
 		return
 	}
 	}
@@ -153,8 +153,34 @@ function memberSubmit(check){
 
 	}
 
-	alert("회원가입을 축하드립니다")
-
-	check.submit();
+	
+	if(check.id=='signupForm'){
+		alert("회원가입을 축하드립니다")
+		check.submit();
+	}
+	
+	else if(check.id='modifyForm'){
+		alert('수정되었습니다');
+		var data={
+				uid:check.uid.value,
+				pw:check.password.value,
+				name:check.name.value,
+				phone:check.phone.value,
+				email:check.email.value
+		}
+		$.post('memberModify.aj',data)
+		
+			$('input[name=password],input[name=name],input[name=phone],input[name=email]').attr("readonly");
+			$('#modifyBtn').removeAttr('onclick');
+			$('#modifyBtn').attr('onclick','memberModify()');
+			
+			$('#mreset').html('');
+		
+		
+	}
+	
+	
+	
+	
 
 }

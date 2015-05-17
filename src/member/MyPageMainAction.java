@@ -11,7 +11,7 @@ public class MyPageMainAction implements CommandAction{
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
 		MemberBean member=MemberBean.getInstance();
-		MemberData md=member.getUserData(id);
+		MemberData md=member.getMemberData(id);
 		
 		request.setAttribute("member",md);
 		

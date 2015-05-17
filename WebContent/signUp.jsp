@@ -1,14 +1,17 @@
 ﻿
 	<script src="assets/js/signUp.js"></script>
-<div class="wrap">
+
 	
 
 	<div id="article">
 	<b>회원가입</b><br>
 	<hr>
-	<form action="insertMember.do" name="signupForm" method="post">
+
+
+	<form action="insertMember.do" name="signupForm" id="signupForm" method="post">
+
     아이디<br>
-	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="id"><br>
+	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="uid"><br>
 	비밀번호<br>
 	<input type="password" class="form-control" placeholder="비밀번호" name="password"><br>
 	비밀번호 확인<br>
@@ -31,4 +34,4 @@
 	</div>
 	
 	
-</div>
+

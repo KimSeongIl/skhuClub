@@ -16,7 +16,7 @@ public class MemberBean {
 		
 	}
 	
-	public MemberData getUserData(String id){
+	public MemberData getMemberData(String id){
 		MemberData md=null;
 		try(Connection conn=Conn.getConnection();
 				PreparedStatement pstmt=conn.prepareStatement("select * from member where id=?");){
@@ -50,6 +50,7 @@ public class MemberBean {
 		return md;
 	}
 	
+
 	
 	public void insertMember(MemberData mem){
 		
@@ -63,7 +64,7 @@ public class MemberBean {
 		try(
 			//디비 연결 
 			Connection conn=Conn.getConnection();
-			PreparedStatement pstmt=conn.prepareStatement("inset into member(id,password,studentNum,name,phone,email) values(?,?,?,?,?,?)");
+			PreparedStatement pstmt=conn.prepareStatement("insert into member(id,password,studentNum,name,phone,email) values(?,?,?,?,?,?)");
 				//쿼리문 실행	
 				//디비 인젝션을 방지 
 		){
@@ -86,4 +87,20 @@ public class MemberBean {
 	}
 	
 	
+
+	public void modifyMember(MemberData md){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update member set password=?,name=?,phone=?,email=? where id=?");){
+			
+			pstmt.setString(1, md.getPw());
+			pstmt.setString(2, md.getName());
+			pstmt.setString(3, md.getPhone());
+			pstmt.setString(4, md.getEmail());
+			pstmt.setString(5, md.getId());
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
 }
