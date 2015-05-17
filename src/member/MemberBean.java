@@ -62,4 +62,27 @@ public class MemberBean {
 			e.printStackTrace();
 		}
 	}
+	
+	public int overlapCheck(String id){
+		int check=0;
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select * from member where id=?");){
+			
+			pstmt.setString(1, id);
+			try(ResultSet rs=pstmt.executeQuery();){
+				if(rs.next()){
+					check=1;
+				}
+				else{
+					check=2;
+				}
+				
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return check;
+	}
 }

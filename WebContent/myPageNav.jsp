@@ -25,8 +25,10 @@
 			$.post('addClub.aj',{clubName:clubName},function(data){
 				var result=data.trim();
 				if(result==1){
-					alert('추가되었습니다');
 					
+					$('#clubList').html('');
+					$('#clubList').load('clubList.aj');
+					alert('추가되었습니다');
 					
 					clubClose();
 					

@@ -52,6 +52,7 @@ public class ClubBean {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		
 		return clubList;
 	}
 	
