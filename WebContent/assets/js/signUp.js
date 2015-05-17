@@ -1,3 +1,4 @@
+var overlap=false;
 
 function memberSubmit(check){
 
@@ -21,6 +22,10 @@ function memberSubmit(check){
 
 		alert("아이디는 영어와 숫자만 입력해주세요.(글자수는 6~12)")
 		check.uid.focus();
+		return
+	}
+	if(!overlap){
+		alert("중복확인을 먼저 해주세요!");
 		return
 	}
 	}
@@ -184,3 +189,28 @@ function memberSubmit(check){
 	
 
 }
+
+
+function overlapCheck(check){
+	uid=check.uid.value
+	$.post('overlap.aj',{uid:uid},function(data){
+		check=data.trim();
+		if(check==2){
+			overlap=true;
+			$('#overlapText').html(' 사용가능 한 아이디 입니다.');
+			$('#overlapText').css('color','blue');
+		}
+		else{
+			overlap=false;
+			$('#overlapText').html(' 이미 있는 아이디 입니다.');
+			$('#overlapText').css('color','red');
+		}
+	})
+}
+
+$(document).ready(function(){
+	$('input[name=uid]').keyup(function(){
+		overlap=false;
+		$('#overlapText').html('');
+	})
+})

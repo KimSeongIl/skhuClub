@@ -7,11 +7,13 @@
 	<b>회원가입</b><br>
 	<hr>
 
+	<form action="" name="signupForm" id="signupForm" method="post" class="form-inline">
+         아이디
+    <br>
+	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="uid">
+	&nbsp; <input type="button" class="btn btn-default-sm" value="중복확인" onclick="overlapCheck(this.form)"><span id="overlapText"></span>
+	<br>
 
-	<form action="insertMember.do" name="signupForm" id="signupForm" method="post">
-
-    아이디<br>
-	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="uid"><br>
 	비밀번호<br>
 	<input type="password" class="form-control" placeholder="비밀번호" name="password"><br>
 	비밀번호 확인<br>

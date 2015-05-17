@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,6 +9,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+ul{
+	list-style:none;
+}
+
 .navbar-inverse {
 	max-width: 800px;
 	margin: auto;
@@ -21,16 +24,6 @@
 	margin: auto;
 }
 
-#mainImage {
-	max-width: 700px;
-	height: 300px;
-	margin: auto;
-	border: 1px solid black;
-	background-image: url("assets/image/mainvisual1.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
-
 @media ( min-width :768px) {
 	#notice, #free {
 		float: left;
@@ -39,6 +32,7 @@
 		margin: auto;
 		border: 1px solid black;
 	}
+	
 }
 
 @media ( max-width :767px) {
@@ -48,6 +42,7 @@
 		margin: auto;
 		border: 1px solid black;
 	}
+	
 }
 
 #footer {
@@ -94,7 +89,7 @@
 	
 	display:none;
 }
-#loginDiv{
+#loginDiv,#addClubDiv{
 	position:absolute;
 	left:0;
 	top:0;
@@ -113,6 +108,34 @@
 #board{
 	margin:auto;
 	width:400px;
+	
+}
+#clubList{
+	
+	border:1px solid black;
+	display:none;
+	max-width:800px;
+	margin:auto;
+	margin-top:0;
+}
+#article{
+	min-height:300px;
+	margin:auto;
+}
+#commentList{
+	width:550px;
+	margin:auto;
+}
+#boardTable{
+	margin:auto;
+	width:600px;
+	min-height:300px;
+}
+#boardTable th{
+	width:100px;
+}
+#boardTable td{
+	max-width:500px;
 	
 }
 .fc-sun{color:red;}

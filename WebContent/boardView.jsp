@@ -26,7 +26,7 @@
 %>
 <div id="article">
 
-	<table>
+	<table border id="boardTable">
 		<tr>
 			<th>제목</th>
 			<td><%=btitle %></td>
@@ -41,28 +41,32 @@
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><%=bcontent %></td>
+			<td><div style="overflow:auto;"><%=bcontent %></div></td>
 		</tr>
 	</table>
 	<br>
 	<% if(uid.equals(suid)){ %>
-	<form action="boardUpdate.do" method="post">
+	
+	<form action="boardDelete.do" method="post" style="float:right;">
 		<input type="hidden" name="bid" value="<%=bid %>">
 		<input type="hidden" name="category" value="<%=category %>">
-		<input type="submit" class="btn btn-default-sm" value="수정" ">
+		<input type="submit" class="btn btn-default" value="삭제" onclick="if(!confirm('정말 삭제하시겠습니까?')){return false;}">
 	</form>
 	
-	<form action="boardDelete.do" method="post">
+	<form action="boardUpdate.do" method="post" style="float:right;margin-right:10px;">
 		<input type="hidden" name="bid" value="<%=bid %>">
 		<input type="hidden" name="category" value="<%=category %>">
-		<input type="submit" class="btn btn-default-sm" value="삭제" onclick="if(!confirm('정말 삭제하시겠습니까?')){return false;}">
+		<input type="submit" class="btn btn-primary" value="수정" ">
 	</form>
+	
+	
+	<div style="clear:both;"></div>
 	<% } %>
 	
 	<%if(suid!=null){ %>
-	<div id="commentWrite">
-		<textarea id="commentContent"></textarea> 
-		<input type="button" value="쓰기" class="btn btn-default-sm" onclick="commentWrite('<%=bid%>')">
+	<div id="commentWrite" align="center">
+		<textarea style="width:450px;" id="commentContent"></textarea> 
+		<input type="button" value="쓰기" class="btn btn-primary-sm" onclick="commentWrite('<%=bid%>')">
 	</div>
 	<%} %>
 		
@@ -71,7 +75,7 @@
 		<%
 			List commentList=(List)request.getAttribute("comment");
 			if(commentList!=null){
-				out.println("<table>");
+				out.println("<table id='commentList'>");
 				for(int i=0;i<commentList.size();i++){
 					CommentData cd=(CommentData)commentList.get(i);
 					String colspan="colspan='2'";
@@ -79,7 +83,7 @@
 					if(cd.getUid().equals(suid)){
 						int bdid=cd.getBdid();
 						colspan="";
-						delete="<td><span onclick='commentDelete("+bdid+","+bid+")'>삭제</span></td>";
+						delete="<td><button class='btn btn-default-sm' onclick='commentDelete("+bdid+","+bid+")'>삭제</button></td>";
 					}
 					out.println("<tr>");
 					out.println("<td "+colspan+">");
@@ -97,7 +101,8 @@
 	
 		</table>
 	</div>
-
-	<input type="button" class="btn btn-default-sm" value="돌아가기" onclick="history.back()">
-
+	<br>
+	<div align="center">
+	<input type="button" class="btn btn-default" value="돌아가기" onclick="history.back()">
+	</div>
 </div>
