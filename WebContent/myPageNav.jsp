@@ -1,7 +1,7 @@
 ﻿<style>
 	#myPageNav ul li{
 		float:left;
-		list-style:none;
+		
 	}
 	
 </style>
@@ -26,6 +26,8 @@
 				var result=data.trim();
 				if(result==1){
 					alert('추가되었습니다');
+					
+					
 					clubClose();
 					
 				}
@@ -35,9 +37,7 @@
 			});
 		}
 	}
-	function removeClub(){
-		
-	}
+	
 </script>
 <div id="myPageNav">
 <% String uauth=(String)session.getAttribute("auth"); 
@@ -45,8 +45,8 @@
 	if(uauth.equals("관리자")){
 %>
 	<ul>
+		<li onclick="location.href='myPage.do'">정보수정</li>
 		<li onclick="addClub()">동아리 추가</li>
-		<li onclick="removeClub()">동아리 삭제</li>
 	</ul>
 	<br>
 	<br>

@@ -10,6 +10,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+ul{
+	list-style:none;
+}
+
 .navbar-inverse {
 	max-width: 800px;
 	margin: auto;
@@ -21,16 +25,9 @@
 	margin: auto;
 }
 
-#mainImage {
-	max-width: 700px;
-	height: 300px;
-	margin: auto;
-	border: 1px solid black;
-	background-image: url("assets/image/mainvisual1.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+#jqb_object{
+	margin:auto;
 }
-
 @media ( min-width :768px) {
 	#notice, #free {
 		float: left;
