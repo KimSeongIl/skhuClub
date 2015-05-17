@@ -45,7 +45,7 @@
 					
 				}
 				
-				$('#clubList').load('clubList.aj');
+				
 			})
 	function wrapMask(){
 		
@@ -124,12 +124,7 @@
 		
 	}
 	
-	function clubList(){
-		$('#clubList').css('display','block');
-	}
-	function clubListClose(){
-		$('#clubList').css('display','none');
-	}
+	
 		
 	
 	
