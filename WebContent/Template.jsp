@@ -120,6 +120,23 @@ ul{
 }
 #article{
 	min-height:300px;
+	margin:auto;
+}
+#commentList{
+	width:550px;
+	margin:auto;
+}
+#boardTable{
+	margin:auto;
+	width:600px;
+	min-height:300px;
+}
+#boardTable th{
+	width:100px;
+}
+#boardTable td{
+	max-width:500px;
+	
 }
 .fc-sun{color:red;}
 .fc-sat {color:#007dc3}

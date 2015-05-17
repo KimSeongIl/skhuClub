@@ -5,7 +5,7 @@
 			int bid=(int)request.getAttribute("bid");
 			List commentList=(List)request.getAttribute("comment");
 			if(commentList!=null){
-				out.println("<table>");
+				out.println("<table id='commentList'>");
 				for(int i=0;i<commentList.size();i++){
 					CommentData cd=(CommentData)commentList.get(i);
 					String colspan="colspan='2'";
@@ -13,7 +13,7 @@
 					if(cd.getUid().equals(suid)){
 						int bdid=cd.getBdid();
 						colspan="";
-						delete="<td><span onclick='commentDelete("+bdid+","+bid+")'>삭제</span></td>";
+						delete="<td><button class='btn btn-default-sm'onclick='commentDelete("+bdid+","+bid+")'>삭제</button></td>";
 					}
 					out.println("<tr>");
 					out.println("<td "+colspan+">");

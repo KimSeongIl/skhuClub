@@ -22,10 +22,10 @@
 		<%}else{ %>
 		<form action="boardUpdateSuccess.do?bid=<%=bid %>" method="post">
 		<%} %>
-			<table border style="width:700px;">
+			<table border style="width:700px;margin:auto;">
 				<tr>
 					<th>제목</th>
-					<td><input type="text" placeholder="제목을 입력하세요" name="btitle" value="<%=btitle%>"></td>
+					<td><input style="width:100%;border:0px" type="text" placeholder="제목을 입력하세요" name="btitle" value="<%=btitle%>"></td>
 				</tr>
 				<tr>
 					<th>파일</th>
@@ -36,12 +36,14 @@
 					<td><textarea name="bcontent" id="ir1" rows="10" cols="100" style="width:100%; height:300px; display:none;"><%=bcontent %></textarea>
 				</tr>
 			</table>
-			<input type="hidden" name="category" value="<%=category%>">
-			<input type="submit" class="btn btn-default-sm" value="쓰기" onclick="if($('input[name=btitle]').val().trim()==''){
+			<input type="hidden" name="category" value="<%=category%>"><br>
+			<div align="center">
+			<input type="submit" class="btn btn-primary" value="쓰기" onclick="if($('input[name=btitle]').val().trim()==''){
 				alert('제목을 입력하세요');
 			return false;
 		}else{submitContents(this)}">
-			&nbsp;<input type="button"  class="btn btn-default-sm" value="돌아가기" onclick="history.back()">
+			&nbsp;<input type="button"  class="btn btn-default" value="돌아가기" onclick="history.back()">
+			</div>
 		</form>
 	</div>
 	<script type="text/javascript">
