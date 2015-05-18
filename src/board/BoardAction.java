@@ -43,26 +43,26 @@ public class BoardAction implements CommandAction{
 		CommentBean comment=CommentBean.getInstance();
 		List commentCount=comment.commentCount(start,end,category);
 		List paging=new ArrayList();
-		
-		paging.add("<a href=board.do?category="+category+">처음</a> &nbsp;");
+		paging.add("<ul class='pagination'>");
+		paging.add("<li><a href=board.do?category="+category+">처음</a></li>");
 		if(temp>=1){
-			paging.add("<a href=board.do?category="+category+"&pnum="+pre+">이전</a> &nbsp;");
+			paging.add("<li><a href=board.do?category="+category+"&pnum="+pre+">이전</a></li>");
 		}
 		for(int i=pre;i<next;i++){
 			if(i==page){
 				break;
 			}
 			if((i+1)==pnum)
-				paging.add((i+1)+" &nbsp;");
+				paging.add("<li class='active'><a>"+(i+1)+"</a></li>");
 			else
-				paging.add("<a href=board.do?category="+category+"&pnum="+(i+1)+">"+(i+1)+"</a> &nbsp;");
+				paging.add("<li><a href=board.do?category="+category+"&pnum="+(i+1)+">"+(i+1)+"</a></li>");
 		}
 		if(next<page){
-			paging.add("<a href=board.do?category="+category+"&pnum="+(next+1)+">다음</a> &nbsp;");
+			paging.add("<li><a href=board.do?category="+category+"&pnum="+(next+1)+">다음</a></li>");
 		}
 		
-		paging.add("<a href=board.do?category="+category+"&pnum="+page+">마지막</a> &nbsp;");
-		
+		paging.add("<li><a href=board.do?category="+category+"&pnum="+page+">마지막</a></li>");
+		paging.add("</ul>");
 		request.setAttribute("boardList", boardList);
 		request.setAttribute("commentCount", commentCount);
 		request.setAttribute("count", count);

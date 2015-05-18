@@ -189,7 +189,7 @@ public class BoardBean {
 
 		try(Connection conn=Conn.getConnection();
 				PreparedStatement pstmt=conn.prepareStatement("insert into board(uid,btitle,bContent,category,files) values(?,?,?,?,?)");){
-
+ 
 			pstmt.setString(1, uId);
 			pstmt.setString(2, bTitle);
 			pstmt.setString(3, bContent);

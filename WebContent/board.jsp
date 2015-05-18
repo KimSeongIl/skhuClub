@@ -6,7 +6,7 @@
 
 <div id="article">
 
-	<table border id="board">
+	<table id="board" class="table table-hover">
 		<tr>
 			<th>No</th>
 			<th>제목</th>
@@ -18,6 +18,12 @@
 				List boardList = (List) request.getAttribute("boardList");
 				List commentCount=(List)request.getAttribute("commentCount");
 				int count=0;
+				if(category.equals("notice")){
+					out.println("<h2 align='center'>공 지 사 항</h2><br>");
+				}
+				else if(category.equals("free")){
+					out.println("<h2 align='center'>자 유 게 시 판</h2><br>");
+				}
 				if (boardList != null) {
 					
 					for (int i = 0; i < boardList.size(); i++) {
@@ -58,7 +64,8 @@
 				out.print(paging.get(i));
 			}
 		%>
-	</div>
+	</div><br>
+	<center>
 	<select id="searchSelect">
 		<option>제목+내용</option>
 		<option>작성자</option>
@@ -77,6 +84,7 @@
 	<input type="search" id="boardSearchValue">
 	 <input id="boardSearch" type="button" value="검색" class="btn btn-default-sm" onclick="boardSearch('<%=category%>')"> 
 	 <input type="button" class="btn btn-default-sm" value="글쓰기" onclick="location.href='boardWrite.do?category=<%=category%>'">
+	</center>
 </div>
 
 

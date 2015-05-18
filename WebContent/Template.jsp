@@ -126,6 +126,14 @@ ul{
 	width:550px;
 	margin:auto;
 }
+#board{
+	width:500px;
+}
+#paging{
+	text-align:center;
+	margin:auto;
+}
+
 #boardTable{
 	margin:auto;
 	width:600px;

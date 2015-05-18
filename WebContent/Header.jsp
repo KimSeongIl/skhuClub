@@ -12,7 +12,9 @@
 	if(name==null){
 %>
 	<span id="login">로그인</span>
+
 	<span id="signUp" onclick="location.href='signUp.do'">회원가입</span>
+
 <%  }else{
 %>
 	<%=name%>님 환영합니다 <br>

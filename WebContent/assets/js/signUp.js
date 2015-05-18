@@ -1,7 +1,7 @@
 var overlap=false;
 
 function memberSubmit(check){
-	
+
 //	아이디 입력여부 검사 
 	if(check.uid!=null){
 	if(check.uid.value=="")
