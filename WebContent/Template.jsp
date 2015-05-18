@@ -8,7 +8,13 @@
 <title>성공회대 동아리 커뮤니티</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+*{
+
+	font-family: 'Jeju Gothic', sans-serif;
+}
 ul{
 	list-style:none;
 }
@@ -46,12 +52,10 @@ ul{
 }
 
 #footer {
-	max-width: 800px;
+	
 	height: 100px;
-	border: 1px solid black;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	box-shadow: 0px 5px 10px #ccc;
+	border-top: 1px solid black;
+	
 	margin: auto;
 	margin-top: 10px;
 }

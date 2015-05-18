@@ -32,7 +32,7 @@
 						if(commentCount!=null){
 							cd=(CommentData)commentCount.get(i);
 						}
-
+						String day=board.getBDate().getYear()+1900+"년 "+board.getBDate().getMonth()+"월 "+board.getBDate().getDay()+"일 ";
 						out.println("<tr>");
 						out.println("<td>" + board.getBId() + "</td>");
 						if(cd!=null && cd.getBdcount()!=0){
@@ -47,7 +47,7 @@
 						}
 						
 						out.println("<td>" + board.getUName() + "</td>");
-						out.println("<td>" + board.getBDate() + "</td>");
+						out.println("<td>" + day + "</td>");
 						out.println("<td>" + board.getInquiry() + "</td>");
 						out.println("</tr>");
 					}
