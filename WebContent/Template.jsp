@@ -132,6 +132,13 @@ ul{
 }
 #board{
 	width:500px;
+	text-align:center;
+}
+#board th{
+	text-align:center;
+}
+#board td:nth-child(2){
+	width:200px;
 }
 #paging{
 	text-align:center;

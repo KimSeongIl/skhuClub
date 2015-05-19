@@ -101,13 +101,21 @@ public class MainTemplate extends HttpServlet {
 				command=command.substring(request.getContextPath().length()+1);
 			}
 			com=(CommandAction)commandMap.get(command);
+			if(com==null){
+				view="Main.jsp";
+			}
+			else{
+				view=com.requestPro(request,response);
+			}
 			
-			view=com.requestPro(request,response);
 		}catch(Throwable e){
 			throw new ServletException(e);
 		}
 		
+		
 		request.setAttribute("article", view);
+		
+		
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("Template.jsp");
 		dispatcher.forward(request, response);

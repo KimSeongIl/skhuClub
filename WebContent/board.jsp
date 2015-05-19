@@ -5,7 +5,7 @@
 
 
 <div id="article">
-
+	<div style="min-height:500px;">
 	<table id="board" class="table table-hover">
 		<tr>
 			<th>No</th>
@@ -32,7 +32,7 @@
 						if(commentCount!=null){
 							cd=(CommentData)commentCount.get(i);
 						}
-						String day=board.getBDate().getYear()+1900+"년 "+board.getBDate().getMonth()+"월 "+board.getBDate().getDay()+"일 ";
+						String day=board.getBDate().getYear()+1900+"년 "+(board.getBDate().getMonth()+1)+"월 "+board.getBDate().getDate()+"일 ";
 						out.println("<tr>");
 						out.println("<td>" + board.getBId() + "</td>");
 						if(cd!=null && cd.getBdcount()!=0){
@@ -85,6 +85,7 @@
 	 <input id="boardSearch" type="button" value="검색" class="btn btn-default-sm" onclick="boardSearch('<%=category%>')"> 
 	 <input type="button" class="btn btn-default-sm" value="글쓰기" onclick="location.href='boardWrite.do?category=<%=category%>'">
 	</center>
+	</div>
 </div>
 
 

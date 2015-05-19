@@ -8,17 +8,22 @@
 	border-spacing:50px;
 }
 #club_list td{
+	background:#4289C9;
 	width:250px;
 	height:150px;
 	border-radius:5px;
 	
-	border:1px solid black;
+	
 	text-align:center;
 }
-
+#club_list td a{
+	font-size:30px;
+	color:white;
+}
 </style>
 
 <div id="article">
+	
 	<center>
 	<table id="club_list" ">
 		<%
