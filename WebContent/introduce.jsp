@@ -1,5 +1,8 @@
-﻿
-
+﻿<div id="article">
+<%@page import="java.net.*" %>
+<% String club=URLEncoder.encode(request.getParameter("club"),"UTF-8");
+	
+%>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,8 +95,13 @@
                     
                 </div>
             </div>
+           
         </div>
     </section>
+
+
+
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -124,9 +132,12 @@
                 </div>
             </div>
         </div>
+      
     </section>
-    
-  <a href="application.do" class="btn btn-primary" >지원하기</a>
+  <%if(session.getAttribute("auth")==null){ %> 
+  <div style="text-align:right"><a href="application.do?club=<%=club %>" class="btn btn-primary" >지원하기</a></div>
+<%}else{ %>
+	<div style="text-align:right"><a href="" class="btn btn-primary" >올리기</a></div>
+<%} %>
 
-
-
+</div>

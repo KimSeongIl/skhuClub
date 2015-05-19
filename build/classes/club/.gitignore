@@ -2,3 +2,8 @@
 /ClubBean.class
 /ClubData.class
 /ClubListAction.class
+/ExplainAction.class
+/ClubExplainAction.class
+/InsertClubExplain.class
+/classInsertClubExplain.class
+/InsertClubExplainAction.class
