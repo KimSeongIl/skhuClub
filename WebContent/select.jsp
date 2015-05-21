@@ -6,7 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>일정 입력</title>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+*{
 
+	font-family: 'Jeju Gothic', sans-serif;
+}
+</style>
 </head>
 <body>
 	<%
@@ -14,19 +20,23 @@
 		String end = (String) request.getAttribute("end");
 	%>
 
-	<form method="post">
+	<form method="post" class="form-inline">
 		<input type="hidden" name="start" value="<%=start%>">
 		<input type="hidden" name="end" value="<%=end%>"><br>
-		&nbsp;제목: <input type="text" name="tit"><br>
-		<br> &nbsp;색 : <select name='color1'>
+		&nbsp;제목: <input type="text" name="tit" class="form-control"><br>
+		<br> &nbsp;색 : <select name='color1' class="form-control">
 			<option>red</option>
 			<option>blue</option>
 			<option>green</option>
 			<option>orange</option>
 			<option>sky</option>
 			<option>purple</option>
-		</select> <input type="button" class="btn btn-default btn-sm" value="확인"
+		</select> 
+		<br>
+		<div align="center">
+		<input type="button" class="btn btn-primary" value="확인"
 			onclick="window.opener.select(this.form);self.close()">
+		</div>
 	</form>
 
 

@@ -2,6 +2,12 @@
 <%@page import="comment.CommentData" %>
 <%@page import="java.util.*" %>
 <%@page import="java.io.*" %>
+<style>
+	textarea:focus{
+		height:100px;
+		
+	}
+</style>
 <%  
 
 	BoardData board=(BoardData)request.getAttribute("board");
@@ -65,11 +71,12 @@
 	
 	<%if(suid!=null){ %>
 	<div id="commentWrite" align="center">
-		<textarea style="width:450px;" id="commentContent"></textarea> 
-		<input type="button" value="쓰기" class="btn btn-primary-sm" onclick="commentWrite('<%=bid%>')">
+		<textarea style="width:450px; float:left;margin-left:100px;" id="commentContent" class="form-control"></textarea> 
+		<input style="float:left;margin-left:10px;"type="button" value="쓰기" class="btn btn-primary-sm" onclick="commentWrite('<%=bid%>')">
 	</div>
+	<div style="clear:both;"></div>
 	<%} %>
-		
+	<br><br>	
 	<div id="comment">
 		
 		<%

@@ -3,29 +3,34 @@
 <%@page import="java.net.*"%>
 <style>
 #club_list{
-	width:600px;
+	max-width:700px;
 	border-collapse:separate;
 	border-spacing:50px;
 }
 #club_list td{
-	width:150px;
-	height:75px;
+	background:#4289C9;
+	width:250px;
+	height:150px;
 	border-radius:5px;
 	
-	border:1px solid black;
+	
 	text-align:center;
 }
-
+#club_list td a{
+	font-size:30px;
+	color:white;
+}
 </style>
 
 <div id="article">
+	
 	<center>
 	<table id="club_list" ">
 		<%
 			List clubList = (List) request.getAttribute("clubList");
 			if (clubList != null) {
 				for (int i = 0; i < clubList.size(); i++) {
-					if (i % 3 == 0) {
+					if (i % 2 == 0) {
 
 						out.println("<tr>");
 					}
@@ -34,7 +39,7 @@
 					String encodingName = URLEncoder.encode(name);
 					out.println("<td><a href='introduce.do?club="
 							+ encodingName + "'>" + name + "</a></td>");
-					if (i!=0 && i % 3 == 2) {
+					if (i!=0 && i % 2 == 1) {
 
 						out.println("</tr>");
 					}

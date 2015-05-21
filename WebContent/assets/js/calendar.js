@@ -74,7 +74,7 @@ $(document).ready(function() {
 			var left=(screen.availWidth/2)-(200/2);
 			
 			
-			var se=window.open('select.aj?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=250,height=150,top='+top+',left='+left);
+			var se=window.open('select.aj?start='+String(start)+'&end='+String(end),'','toolbar=no,status=no,resizable=no,menubar=no,directories=no,width=350,height=250,top='+top+',left='+left);
 
 
 			

@@ -97,7 +97,7 @@
 	function memberModify(){
 		$('input[name=password],input[name=name],input[name=phone],input[name=email]').removeAttr("readonly");
 		
-		$('#mpw2').append("비밀번호확인: <input type='password' name='passwordCheck' class='form-control'><br>");
+		$('#mpw2').append("비번확인: <input type='password' name='passwordCheck' class='form-control'><br><br>");
 		$('#mreset').append("<input type='button' value='취소' class='btn btn-default-sm' onclick='modifyReset()'>");
 		$('input[name=password]').focus();
 		$('#modifyBtn').removeAttr('onclick');
