@@ -137,7 +137,7 @@
   <%if(session.getAttribute("auth")==null){ %> 
   <div style="text-align:right"><a href="application.do?club=<%=club %>" class="btn btn-primary" >지원하기</a></div>
 <%}else{ %>
-	<div style="text-align:right"><a href="" class="btn btn-primary" >올리기</a></div>
+	<div style="text-align:right"><a href="clubExplain.do" class="btn btn-primary" >올리기</a></div>
 <%} %>
 
 </div>
