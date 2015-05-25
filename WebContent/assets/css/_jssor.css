@@ -1,0 +1,32 @@
+.jssorb21 div, .jssorb21 div:hover, .jssorb21 .av{
+	background: url(../image/b03.png) no-repeat;
+	overflow:hidden;
+	cursor: pointer;
+}
+.jssorb21 div { background-position: -5px -5px; }
+.jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+.jssorb21 .av { background-position: -65px -5px; }
+.jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+
+
+/* jssor slider arrow navigator skin 21 css */
+/*
+.jssora21l              (normal)
+.jssora21r              (normal)
+.jssora21l:hover        (normal mouseover)
+.jssora21r:hover        (normal mouseover)
+.jssora21ldn            (mousedown)
+.jssora21rdn            (mousedown)
+*/
+.jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+}
+.jssora21l { background-image:url(../image/left_01.png); }
+.jssora21r { background-image:url(../image/right_01.png); }
+.jssora21l:hover { background-image:url(../image/left_02.png) }
+.jssora21r:hover { background-image:url(../image/right_02.png); }
+.jssora21ldn { background-image:url(../image/left_03.png) }
+.jssora21rdn { background-image:url(../image/right_03.png); }

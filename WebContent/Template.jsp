@@ -34,7 +34,7 @@ a:visited{
 
 .wrap {
 	max-width: 800px;
-	background:white;
+	
 	border-radius:10px;
 	margin: auto;
 }
@@ -96,7 +96,7 @@ a:visited{
 	margin-top: 10px;
 }
 #footer li:hover{
-	background:black;
+	background:#5DBC9C;
 	
 }
 
@@ -111,18 +111,7 @@ a:visited{
 	top: 10px;
 }
 
-.dropdown-menu {
-	background: #222222 !important;
-}
 
-.dropdown-menu>li>a {
-	color: white !important;
-}
-
-.dropdown-menu>li>a:hover {
-	background: #909090 !important;
-	color: black !important;
-}
 #layered{
 	position:absolute;
 	left:0;
