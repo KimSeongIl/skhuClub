@@ -72,7 +72,7 @@
 	<%if(suid!=null){ %>
 	<div id="commentWrite" align="center">
 		<textarea style="width:450px; float:left;margin-left:100px;" id="commentContent" class="form-control"></textarea> 
-		<input style="float:left;margin-left:10px;"type="button" value="쓰기" class="btn btn-primary-sm" onclick="commentWrite('<%=bid%>')">
+		<input style="float:left;margin-left:10px;"type="button" value="쓰기" class="btn btn-primary btn-sm" onclick="commentWrite('<%=bid%>')">
 	</div>
 	<div style="clear:both;"></div>
 	<%} %>
@@ -90,7 +90,7 @@
 					if(cd.getUid().equals(suid)){
 						int bdid=cd.getBdid();
 						colspan="";
-						delete="<td><button class='btn btn-default-sm' onclick='commentDelete("+bdid+","+bid+")'>삭제</button></td>";
+						delete="<td><button class='btn btn-default btn-sm' onclick='commentDelete("+bdid+","+bid+")'>삭제</button></td>";
 					}
 					out.println("<tr>");
 					out.println("<td "+colspan+">");
