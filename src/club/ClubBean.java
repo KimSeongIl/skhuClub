@@ -17,6 +17,26 @@ public class ClubBean {
 	private ClubBean(){
 
 	}
+	public void insertClubExplain(ClubData cl){
+		
+		String homepage=cl.getHomePage();
+		String clubexplain=cl.getClubExplain();
+		String clubevent=cl.getClubEvent();
+		
+		
+		try(
+			Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("insert into club(homepage,clubexplain,clubevent) values(?,?,?)");
+				){
+			pstmt.setString(1, homepage);
+			pstmt.setString(2,clubexplain);
+			pstmt.setString(3,clubevent);
+			pstmt.executeUpdate();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		
+	}
 
 	public int addClub(String name){
 		try(Connection conn=Conn.getConnection();

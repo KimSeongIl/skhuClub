@@ -17,6 +17,7 @@ public class InsertApplicationAction implements CommandAction {
 		HttpSession session=request.getSession();
 		String uid=(String)session.getAttribute("id");
 		String club=request.getParameter("club");
+		
 		ApplyData app=new ApplyData();
 		
 		app.setUid(uid);

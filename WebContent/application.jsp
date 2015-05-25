@@ -1,4 +1,9 @@
-﻿
+﻿<% 
+	if(session.getAttribute("id")==null){
+		out.println("<script>alert('로그인 해주세요!')</script>");
+		out.println("<script>history.back()</script>");
+	}
+	String club=request.getParameter("club"); %>
 	<script src=""></script>
 
 	
@@ -16,7 +21,7 @@
 	<input type="text" class="form-control" placeholder="학과를 입력해주세요" name="department"><br>
 	자기소개<br>
 	<textarea class="form-control" placeholder="300자이내로 작성해주세요" name="self_instroduction"></textarea>
-
+	<input type="hidden" name="club" value="<%=club %>">
 	<hr>
 	
 
