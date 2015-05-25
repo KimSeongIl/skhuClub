@@ -1,8 +1,38 @@
 ﻿<div id="article">
 <%@page import="java.net.*" %>
-<% String club=URLEncoder.encode(request.getParameter("club"),"UTF-8");
+<%@page import="club.ClubData" %>
+
+<% 
+String getClub=request.getParameter("club");
+String club=URLDecoder.decode(getClub,"UTF-8");
 	
+
+
+
+//  디비에서 정보를 가져오기 위해 
+
+ClubData viewClub=(ClubData)request.getAttribute("viewClub");
+String homepage="";
+String clubExplain="";
+String clubEvent="";
+if(viewClub!=null){
+homepage=viewClub.getHomePage();
+clubExplain=viewClub.getClubExplain();
+clubEvent=viewClub.getClubEvent();
+
+if(homepage==null){
+	homepage="";
+}
+if(clubExplain==null){
+	clubExplain="";
+}
+if(clubEvent==null){
+	clubEvent="";
+}
+}
 %>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,12 +55,12 @@
                     <img src="">
                 </div>
                 <div class="detail" style="padding:10px 10px 10px 500px;">
-                    <p><b><h2>name</h2> </b></p>
-                    <p>설립연도 : </p>
+                    
+                    
                     <p>현회장:</p>
                     <p>연락처:</p>
-                    <p>회원수:</p>
-                    <p>동방위치:</p>
+                    
+                    <p>홈페이지:<%=homepage %></p>
                     
                 </div>
                 </div>
@@ -61,7 +91,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>동아리 소개 부분</h1>
+                    
+                    
+                    <%=clubExplain %>
+              
                     
                 </div>
             </div>
@@ -91,8 +124,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>활동 및 행사 부분</h1>
                     
+                    <%=clubEvent %>
                 </div>
             </div>
            
@@ -135,9 +168,9 @@
       
     </section>
   <%if(session.getAttribute("auth")==null){ %> 
-  <div style="text-align:right"><a href="application.do?club=<%=club %>" class="btn btn-primary" >지원하기</a></div>
+  <div style="text-align:right"><a href="application.do?club=<%=getClub %>" class="btn btn-primary" >지원하기</a></div>
 <%}else{ %>
-	<div style="text-align:right"><a href="clubExplain.do" class="btn btn-primary" >올리기</a></div>
+	<div style="text-align:right"><a href="clubExplain.do?club=<%=getClub %>" class="btn btn-primary" >올리기</a></div>
 <%} %>
 
 </div>

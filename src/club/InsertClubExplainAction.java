@@ -10,20 +10,21 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
 
 	request.setCharacterEncoding("utf-8");
 	
+	String name=request.getParameter("name");
 	String homepage=request.getParameter("homepage");
 	String clubexplain=request.getParameter("clubexplain");
 	String clubevent=request.getParameter("clubevent");
 	
 	ClubData cl=new ClubData();
 	
-	
+	cl.setName(name);
 	cl.setHomePage(homepage);
 	cl.setClubExplain(clubexplain);
 	cl.setClubEvent(clubevent);
 	
 	ClubBean dbCl=ClubBean.getInstance();
 	
-	dbCl.insertClubExplain(cl);
+	dbCl.updateClubExplain(cl);
 	
 	return "Main.jsp";
 	

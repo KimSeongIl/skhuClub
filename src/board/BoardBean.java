@@ -213,7 +213,7 @@ public class BoardBean {
 		}
 		
 	}
-	public BoardData viewBoard(int bId){
+	public BoardData viewBoard(int bId){//공지사항의 정보를 가져와 보여주기위해서  
 
 		BoardData board=null;
 		try(Connection conn=Conn.getConnection();

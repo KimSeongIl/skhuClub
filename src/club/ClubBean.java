@@ -17,26 +17,7 @@ public class ClubBean {
 	private ClubBean(){
 
 	}
-	public void insertClubExplain(ClubData cl){
-		
-		String homepage=cl.getHomePage();
-		String clubexplain=cl.getClubExplain();
-		String clubevent=cl.getClubEvent();
-		
-		
-		try(
-			Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("insert into club(homepage,clubexplain,clubevent) values(?,?,?)");
-				){
-			pstmt.setString(1, homepage);
-			pstmt.setString(2,clubexplain);
-			pstmt.setString(3,clubevent);
-			pstmt.executeUpdate();
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		
-	}
+
 
 	public int addClub(String name){
 		try(Connection conn=Conn.getConnection();
@@ -72,8 +53,57 @@ public class ClubBean {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		
+
 		return clubList;
 	}
-	
+
+	public void updateClubExplain(ClubData cl){
+
+		String name=cl.getName();
+		String homepage=cl.getHomePage();
+		String clubexplain=cl.getClubExplain();
+		String clubevent=cl.getClubEvent();
+
+
+		try(
+				Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update club set homepage=?,clubexplain=?,clubevent=? where name=?");
+				){
+
+			pstmt.setString(1, homepage);
+			pstmt.setString(2,clubexplain);
+			pstmt.setString(3,clubevent);
+			pstmt.setString(4,name);
+			pstmt.executeUpdate();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+	}
+
+	public ClubData viewClub(String name){
+		ClubData club=null;
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select name,homepage,clubexplain,clubevent from club where name=? ");){
+
+			pstmt.setString(1, name);
+
+			try(ResultSet rs=pstmt.executeQuery();){
+				if(rs.next()){
+					club=new ClubData();
+					club.setName(rs.getString("name"));
+					club.setHomePage(rs.getString("homepage"));
+					club.setClubExplain(rs.getString("clubexplain"));
+					club.setClubEvent(rs.getString("clubevent"));
+
+				}
+			}catch(Exception ee){}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		return club;
+	}
+
+
 }
