@@ -20,8 +20,8 @@ var jqb_vBusy = false;
 var jqb_vIsPause = false;
 var jqb_tmp = 20;
 var jqb_title;
-var jqb_imgW = 700;
-var jqb_imgH = 260;
+var jqb_imgW = 1000;
+var jqb_imgH = 400;
 
 jQuery(document).ready(function() {	
 	jqb_vTotal = $(".jqb_slides").children().size() -1;

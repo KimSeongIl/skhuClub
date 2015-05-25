@@ -12,7 +12,7 @@
 	
 	
 	<div id="article">
-		<div id="calendar">
+		<div id="calendar" >
 		</div>
 	</div>
 	

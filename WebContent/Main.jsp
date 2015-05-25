@@ -1,3 +1,4 @@
+</div>
 <script src="assets/js/jqbanner.js"></script>
 <script>
 	$(document).ready(function() {
@@ -34,12 +35,13 @@
 	
 </div>
 
-
+<!--
 <div id="article">
 	<div id="notice">notice</div>
 	<div id="free">free</div>
 </div>
-
+-->
 
 
 <div style="clear: both;"></div>
+<div class="wrap">

@@ -5,7 +5,7 @@
 
 
 <div id="article">
-	<div style="min-height:500px;">
+	<div style="min-height:500px;"><br>
 	<table id="board" class="table table-hover">
 		<tr>
 			<th>No</th>
@@ -84,6 +84,7 @@
 	<input type="search" id="boardSearchValue">
 	 <input id="boardSearch" type="button" value="검색" class="btn btn-default-sm" onclick="boardSearch('<%=category%>')"> 
 	 <input type="button" class="btn btn-default-sm" value="글쓰기" onclick="location.href='boardWrite.do?category=<%=category%>'">
+	<br><br>
 	</center>
 	</div>
 </div>

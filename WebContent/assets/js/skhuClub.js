@@ -1,7 +1,11 @@
 	$(document).ready(
 			function() {
 				
-				
+				$('#footer li').hover(function(){
+					$(this).children('a').css('color','white');
+				},function(){
+					$(this).children('a').css('color','black');
+				})
 
 				
 				$('div.navbar-ex1-collapse ul li').hover(function(){

@@ -1,7 +1,8 @@
-﻿<div class="wrap">
-<nav class="navbar navbar-inverse" role="navigation">
+﻿
+<nav class="navbar navbar-default" role="navigation" >
 
 	<!-- Brand and toggle get grouped for better mobile display -->
+	<div style="margin:auto;max-width:768px;">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse"
 			data-target=".navbar-ex1-collapse">
@@ -13,7 +14,7 @@
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
+	<div class="collapse navbar-collapse navbar-ex1-collapse" >
 		<ul class="nav navbar-nav">
 
 			
@@ -33,9 +34,28 @@
 			
 		
 	</div>
-	<!-- /.navbar-collapse -->
+	<div id="log">
+<%
+	String name=(String)session.getAttribute("name");
 
+	if(name==null){
+%>
+	<span id="login">로그인</span>
+
+	<span id="signUp" onclick="location.href='signUp.do'">회원가입</span>
+
+<%  }else{
+%>
+	<%=name%>님 환영합니다 <br>
+	<span id="myPage"><a href="myPage.do">마이페이지</a></span>
+	<span id="logout"><a href="logout.do">로그아웃</a></span>
+<%
+}
+%>
+</div>
+	<!-- /.navbar-collapse -->
+	</div>
 </nav>
 
 <br>
-
+<div class="wrap">

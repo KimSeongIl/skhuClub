@@ -15,18 +15,27 @@
 
 	font-family: 'Jeju Gothic', sans-serif;
 }
+
 ul{
 	list-style:none;
 }
+a{
+	
+	text-decoration:none;
+}
+a:visited{
+	color:black;
+}
 
 .navbar-inverse {
-	max-width: 800px;
+	max-width: 100%;
 	margin: auto;
 }
 
 .wrap {
 	max-width: 800px;
-	background-color: white;
+	background:white;
+	border-radius:10px;
 	margin: auto;
 }
 
@@ -36,7 +45,28 @@ ul{
 		width: 400px;
 		height: 300px;
 		margin: auto;
-		border: 1px solid black;
+		
+	}
+	#article{
+		min-height:300px;
+		margin:auto;
+	}
+	#footer{
+		margin:auto;
+	}
+	
+	#footerList{
+		margin:auto;
+		max-width:768px;
+	}
+	
+	#footer li{
+		
+		
+		width:250px;
+		float:left;
+		display:block;
+		
 	}
 	
 }
@@ -48,16 +78,26 @@ ul{
 		margin: auto;
 		border: 1px solid black;
 	}
+	#article{
+		
+		margin:auto;
+	}
 	
 }
 
 #footer {
+	text-align:center;
+	
 	
 	height: 100px;
 	border-top: 1px solid black;
-	
+	text-align:center;
 	margin: auto;
 	margin-top: 10px;
+}
+#footer li:hover{
+	background:black;
+	
 }
 
 #header {
@@ -66,9 +106,9 @@ ul{
 
 #log {
 	position: absolute;
-	border: 1px solid black;
-	right: 50px;
-	top: 30px;
+	
+	right: 80px;
+	top: 10px;
 }
 
 .dropdown-menu {
@@ -122,10 +162,7 @@ ul{
 	margin:auto;
 	margin-top:0;
 }
-#article{
-	min-height:300px;
-	margin:auto;
-}
+
 #commentList{
 	width:550px;
 	margin:auto;
@@ -169,7 +206,7 @@ ul{
 <script src="assets/js/skhuClub.js"></script>
 
 </head>
-<body>
+<body style="background-color:#EEEEEE;">
 	<div id="layered" ></div>
 	<div id="loginDiv">
 		<div id="loginClose">
@@ -181,7 +218,7 @@ ul{
 			<input type="submit" value="로그인" class="btn btn-default">
 		</form>
 	</div>
-	<jsp:include page="Header.jsp" flush="false" />
+	
 	<jsp:include page="Nav.jsp" flush="false" />
 	<%String article=(String)request.getAttribute("article"); %>
 	<jsp:include page="<%=article %>" flush="false" />
