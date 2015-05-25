@@ -12,8 +12,8 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
 	
 	String name=request.getParameter("name");
 	String homepage=request.getParameter("homepage");
-	String clubexplain=request.getParameter("clubexplain");
-	String clubevent=request.getParameter("clubevent");
+	String clubexplain=request.getParameter("clubexplain").replaceAll("\n", "<br>");
+	String clubevent=request.getParameter("clubevent").replaceAll("\n","<br>");
 	
 	ClubData cl=new ClubData();
 	

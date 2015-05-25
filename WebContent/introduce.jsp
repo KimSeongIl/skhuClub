@@ -16,11 +16,11 @@ String homepage="";
 String clubExplain="";
 String clubEvent="";
 if(viewClub!=null){
-homepage=viewClub.getHomePage();
+homepage="<a href=//"+viewClub.getHomePage()+" target='_blank'>"+viewClub.getHomePage()+"</a>";//링크르 걸어주기위해서 ( //를 해줘야 상대경로 안가짐  )
 clubExplain=viewClub.getClubExplain();
 clubEvent=viewClub.getClubEvent();
 
-if(homepage==null){
+if(viewClub.getHomePage()==null){
 	homepage="";
 }
 if(clubExplain==null){
@@ -94,7 +94,7 @@ if(clubEvent==null){
                     
                     
                     <%=clubExplain %>
-              
+                  
                     
                 </div>
             </div>
