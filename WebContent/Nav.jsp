@@ -40,15 +40,15 @@
 
 	if(name==null){
 %>
-	<span id="login">로그인</span>
+	<span id="login" class="btn btn-default btn-sm">로그인</span>&nbsp;&nbsp;
 
-	<span id="signUp" onclick="location.href='signUp.do'">회원가입</span>
+	<span id="signUp" onclick="location.href='signUp.do'" class="btn btn-default btn-sm">회원가입</span>
 
 <%  }else{
 %>
-	<%=name%>님 환영합니다 <br>
-	<span id="myPage"><a href="myPage.do">마이페이지</a></span>
-	<span id="logout"><a href="logout.do">로그아웃</a></span>
+	<%=name%>님 환영합니다 &nbsp;
+	<span id="myPage"><a href="myPage.do" class="btn btn-default btn-sm">마이페이지</a></span>&nbsp;&nbsp;
+	<span id="logout"><a href="logout.do" class="btn btn-default btn-sm">로그아웃</a></span>
 <%
 }
 %>

@@ -1,6 +1,7 @@
 ﻿</div>
 <br>
 <div id="footer" >
+
 	<div id="footerList">
 		<li><a href="http://www.skhu.ac.kr"  target="_blank">성공회대학교</a></li>
 		<li><a href="http://library.skhu.ac.kr" target="_blank">중앙도서관</a></li>
@@ -11,4 +12,3 @@
 	<input type="button" class="btn btn-default btn-lg" value="facebook">
 	<input type="button" class="btn btn-default btn-lg" value="twitter">
 </div>
-<br>

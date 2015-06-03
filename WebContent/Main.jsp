@@ -79,9 +79,10 @@ jQuery(document).ready(function ($) {
     $(window).bind("orientationchange", ScaleSlider);   
 });
 </script>
-<div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1920px; height: 750px; overflow: hidden;">
+<div id="article">
+<div id="slider1_container" style="position: relative; margin:0 auto;  width: 1920x; height: 600px; overflow: hidden;">
 	<!-- Slides Container -->
-	<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1920px; height: 750px; overflow: hidden;">
+	<div u="slides" style="cursor: move; margin:auto; position: absolute; left: 0px; top: 0px; width: 1920px; height: 600px; overflow: hidden;">
     	<div>
 			<img u="image" src="assets/image/main_visual_1.jpg" />	
 		</div>
@@ -112,6 +113,8 @@ jQuery(document).ready(function ($) {
     <!-- Arrow Right -->
     <span u="arrowright" class="jssora21r" style="width: 92px; height: 193px; top: 123px; right: 0px"></span>
     
+</div>
+
 </div>
 
 

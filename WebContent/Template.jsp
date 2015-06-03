@@ -20,26 +20,27 @@ ul{
 	list-style:none;
 }
 a{
-	
+	color:black;
 	text-decoration:none;
 }
 a:visited{
 	color:black;
 }
 
-.navbar-inverse {
-	max-width: 100%;
-	margin: auto;
-}
+
 
 .wrap {
+	position:relative;
 	max-width: 800px;
 	
-	border-radius:10px;
+	
 	margin: auto;
 }
 
 @media ( min-width :768px) {
+	.wrap{
+		max-width:60% !important;
+	}
 	#notice, #free {
 		float: left;
 		width: 400px;
@@ -48,7 +49,7 @@ a:visited{
 		
 	}
 	#article{
-		min-height:300px;
+		min-height:600px;
 		margin:auto;
 	}
 	#footer{
@@ -79,7 +80,7 @@ a:visited{
 		border: 1px solid black;
 	}
 	#article{
-		
+		min-height:350px;
 		margin:auto;
 	}
 	
@@ -88,15 +89,16 @@ a:visited{
 #footer {
 	text-align:center;
 	
+	background-color:#DCE5EE;
 	
-	height: 100px;
-	border-top: 1px solid black;
+	
 	text-align:center;
 	margin: auto;
-	margin-top: 10px;
+	margin-top:30px;
+	padding-bottom:5px;
 }
 #footer li:hover{
-	background:#5DBC9C;
+	background:#337AB7;
 	
 }
 
@@ -107,8 +109,8 @@ a:visited{
 #log {
 	position: absolute;
 	
-	right: 80px;
-	top: 10px;
+	right: 100px;
+	top: 15px;
 }
 
 
@@ -138,11 +140,7 @@ a:visited{
 #loginClose{
 	margin-right:10px;
 }
-#board{
-	margin:auto;
-	width:400px;
-	
-}
+
 #clubList{
 	
 	border:1px solid black;
@@ -157,7 +155,8 @@ a:visited{
 	margin:auto;
 }
 #board{
-	width:500px;
+	margin:auto;
+	width:100%;
 	text-align:center;
 }
 #board th{
@@ -183,12 +182,44 @@ a:visited{
 	max-width:500px;
 	
 }
+.navbar-default{
+	background-color:#337AB7 !important;
+	color:white !important;
+	min-height:70px;
+}
+.navbar-header{
+	
+	padding-top:10px;
+}
+.navbar-default .navbar-brand{
+	color:white !important;
+	
+    height:60px;
+	
+}
+.navbar-default .navbar-nav > li {
+	border:1px solid green;
+	padding-top:10px;
+	
+}
+.navbar-default .navbar-nav > li>a{
+	padding-top:10px;
+	color:white !important;
+	height:60px;
+	
+}
+.navbar-default .navbar-nav > li>a:hover{
+	background-color:white !important;
+	color:#337AB7 !important;
+}
+
+
 .fc-sun{color:red;}
 .fc-sat {color:#007dc3}
 </style>
 <link href="assets/css/bootstrap.css" rel="stylesheet" media="screen">
 
-<script src="//code.jquery.com/jquery.js"></script>
+<script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script type="text/javascript" src="assets/js/HuskyEZCreator.js" charset="utf-8"></script>
 
