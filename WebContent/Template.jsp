@@ -23,9 +23,7 @@ a{
 	color:black;
 	text-decoration:none;
 }
-a:visited{
-	color:black;
-}
+
 
 
 
@@ -61,7 +59,7 @@ a:visited{
 		max-width:768px;
 	}
 	
-	#footer li{
+	#footerList>li{
 		
 		
 		width:250px;
@@ -89,7 +87,7 @@ a:visited{
 #footer {
 	text-align:center;
 	
-	background-color:#DCE5EE;
+	background-color:#337AB7;
 	
 	
 	text-align:center;
@@ -97,8 +95,11 @@ a:visited{
 	margin-top:30px;
 	padding-bottom:5px;
 }
-#footer li:hover{
-	background:#337AB7;
+#footerList>li>a{
+	color:white;
+}
+#footerList>li:hover{
+	background-color:white;
 	
 }
 
@@ -197,9 +198,12 @@ a:visited{
     height:60px;
 	
 }
-.navbar-default .navbar-nav > li {
-	border:1px solid green;
+.navbar-nav{
 	padding-top:10px;
+}
+.navbar-default .navbar-nav > li {
+	
+	padding-top:0px;
 	
 }
 .navbar-default .navbar-nav > li>a{

@@ -2,9 +2,9 @@
 			function() {
 				
 				$('#footer li').hover(function(){
-					$(this).children('a').css('color','white');
+					$(this).children('a').css('color','#337AB7');
 				},function(){
-					$(this).children('a').css('color','black');
+					$(this).children('a').css('color','white');
 				})
 
 				

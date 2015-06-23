@@ -32,7 +32,7 @@
 						if(commentCount!=null){
 							cd=(CommentData)commentCount.get(i);
 						}
-						String day=board.getBDate().getYear()+1900+"년 "+(board.getBDate().getMonth()+1)+"월 "+board.getBDate().getDate()+"일 ";
+						String day=board.getBDate().getYear()+1900+"-"+(board.getBDate().getMonth()+1)+"-"+board.getBDate().getDate();
 						out.println("<tr>");
 						out.println("<td>" + board.getBId() + "</td>");
 						if(cd!=null && cd.getBdcount()!=0){
