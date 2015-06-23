@@ -183,14 +183,19 @@ a{
 	max-width:500px;
 	
 }
+
 .navbar-default{
+	
 	background-color:#337AB7 !important;
 	color:white !important;
 	min-height:70px;
 }
 .navbar-header{
 	
-	padding-top:10px;
+	
+}
+.icon-bar{
+	background-color:white !important;
 }
 .navbar-default .navbar-brand{
 	color:white !important;
@@ -199,7 +204,7 @@ a{
 	
 }
 .navbar-nav{
-	padding-top:10px;
+	
 }
 .navbar-default .navbar-nav > li {
 	
@@ -207,7 +212,7 @@ a{
 	
 }
 .navbar-default .navbar-nav > li>a{
-	padding-top:10px;
+	
 	color:white !important;
 	height:60px;
 	

@@ -50,7 +50,7 @@ if(clubEvent==null){
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                 <h1>Item name</h1>
+                 <h1><%=club %></h1>
                 <div class="img" style="width:350px; float:left;">
                     <img src="">
                 </div>
@@ -75,15 +75,15 @@ if(clubEvent==null){
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
      
-      <a class="navbar-brand" href="#">한비</a>
+      <a class="navbar-brand" href="#"><%=club %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div  id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#about">동아리 소개<span class="sr-only">(current)</span></a></li>
+        <li style="background-color:white;"><a href="#about" style="color:#337AB7 !important;">동아리 소개<span class="sr-only">(current)</span></a></li>
         <li ><a href="#services">활동 및 행사</a></li>
-        <li><a href="#contact">활동사진</a></li>     
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -108,15 +108,15 @@ if(clubEvent==null){
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
      
-      <a class="navbar-brand" href="#">한비</a>
+      <a class="navbar-brand" href="#"><%=club %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#about">동아리 소개</a></li>
-        <li class="active"><a href="#services">활동 및 행사<span class="sr-only">(current)</span></a></li>
-        <li><a href="#contact">활동사진</a></li>     
+        <li style="background-color:white;"><a href="#services" style="color:#337AB7 !important;">활동 및 행사<span class="sr-only">(current)</span></a></li>
+          
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -136,35 +136,9 @@ if(clubEvent==null){
 
 
 
-    <!-- Contact Section -->
-    <section id="contact">
-<nav class="navbar navbar-default">
-
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      
-      <a class="navbar-brand" href="#">한비</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#about">동아리 소개</a></li>
-        <li ><a href="#services">활동 및 행사</a></li>
-        <li class="active"><a href="#contact">활동 사진<span class="sr-only">(current)</span></a></li>     
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    
 </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>활동사진 </h1>
-                    
-                </div>
-            </div>
-        </div>
+        
       
     </section>
   <%if(session.getAttribute("auth")==null){ %> 

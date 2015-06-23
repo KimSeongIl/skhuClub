@@ -12,7 +12,7 @@
          &nbsp;&nbsp;&nbsp;아이디
     
 	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="uid">
-	&nbsp; <input type="button" class="btn btn-default-sm" value="중복확인" onclick="overlapCheck(this.form)"><span id="overlapText"></span>
+	&nbsp; <input type="button" class="btn btn-default btn-sm" value="중복확인" onclick="overlapCheck(this.form)"><span id="overlapText"></span>
 	<br><br>
 
 	비밀번호

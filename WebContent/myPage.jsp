@@ -1,7 +1,7 @@
 ﻿<script src="assets/js/signUp.js"></script>
 <%@page import="member.MemberData" %>
 <div id="article">
-	<jsp:include page="myPageNav.jsp" flush="false" />
+	
 	
 	<%
 		MemberData member=(MemberData)request.getAttribute("member");
@@ -17,7 +17,7 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;이메일: <input type="text" name="email" value="<%=member.getEmail() %>" class="form-control" readonly><br><br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;권한: <input type="text" value="<%=member.getAuthority() %>" class="form-control" readonly><br><br>
 	
-	<input id="modifyBtn" type="button" value="정보수정" class="btn btn-default-sm" onclick="memberModify()">
+	<input id="modifyBtn" type="button" value="정보수정" class="btn btn-primary" onclick="memberModify()">
 	<span id="mreset"></span>
 	</form>
 	</center>

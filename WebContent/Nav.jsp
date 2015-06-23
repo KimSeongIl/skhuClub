@@ -47,7 +47,7 @@
 <%  }else{
 %>
 	<%=name%>님 환영합니다 &nbsp;
-	<span id="myPage"><a href="myPage.do" class="btn btn-default btn-sm">마이페이지</a></span>&nbsp;&nbsp;
+	<span id="myPage"><a href="myPage.do" class="btn btn-default btn-sm">정보수정</a></span>&nbsp;&nbsp;
 	<span id="logout"><a href="logout.do" class="btn btn-default btn-sm">로그아웃</a></span>
 <%
 }

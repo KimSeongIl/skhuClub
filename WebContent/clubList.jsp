@@ -8,17 +8,25 @@
 	border-spacing:50px;
 }
 #club_list td{
-	background:#4289C9;
+	
+	padding-top:5px;
 	width:250px;
 	height:150px;
 	border-radius:5px;
-	
+	border:3px solid #E3E3E3;
 	
 	text-align:center;
 }
-#club_list td a{
+#club_list td{
 	font-size:30px;
-	color:white;
+	
+}
+#club_list td:hover{
+	cursor:pointer;
+	cursor:hand;
+	opacity:0.5;
+	border:3px solid #337AB7;
+	
 }
 </style>
 
@@ -26,7 +34,20 @@
 	
 	<center>
 	<table id="club_list" ">
-		<%
+	<%
+		String han=URLEncoder.encode("한비");
+		String kkoon=URLEncoder.encode("꾼");
+	%>
+		<tr>
+			<a href="#"><td><img class="img-rounded" src="assets/image/ex.jpg" width="90%" height="90%"><br>M.R Crew</td></a>
+			<td onclick="location.href='introduce.do?club=<%=kkoon%>'"><img class="img-rounded" src="assets/image/kkoon.jpg" width="90%" height="90%"><br>꾼</td>
+			
+		</tr>
+		<tr>
+			<td onclick="location.href='introduce.do?club=<%=han%>'"><img class="img-rounded" src="assets/image/han.jpg" width="90%" height="90%"><br>한비</td>
+			<a href="#"><td><img class="img-rounded" src="" width="90%" height="90%"><br>아이리스</td></a>
+		</tr>
+		<% /* 
 			List clubList = (List) request.getAttribute("clubList");
 			if (clubList != null) {
 				for (int i = 0; i < clubList.size(); i++) {
@@ -47,7 +68,7 @@
 			}
 
 			out.println("<br>");
-			
+			*/
 		%>
 	</table>
 	</center>
