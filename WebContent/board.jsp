@@ -38,7 +38,7 @@
 						if(cd!=null && cd.getBdcount()!=0){
 							out.println("<td><a href='boardView.do?bid="
 									+ board.getBId() + "'>" + board.getBTitle()
-									+" ["+cd.getBdcount()+"]"+ "</a></td>");
+									+" <span class='badge'>"+cd.getBdcount()+"</span>"+ "</a></td>");
 						}
 						else{
 							out.println("<td><a href='boardView.do?bid="

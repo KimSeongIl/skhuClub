@@ -11,6 +11,7 @@
 
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 *{
 
 	font-family: 'Jeju Gothic', sans-serif;
@@ -67,6 +68,12 @@ a{
 		display:block;
 		
 	}
+	#carousel-example-generic{
+		height:700px;
+	}
+	#carousel-example-generic img{
+		height:700px;
+	}
 	
 }
 
@@ -80,6 +87,12 @@ a{
 	#article{
 		min-height:350px;
 		margin:auto;
+	}
+	#carousel-example-generic{
+		height:360px;
+	}
+	#carousel-example-generic img{
+		height:360px;
 	}
 	
 }
@@ -221,7 +234,41 @@ a{
 	background-color:white !important;
 	color:#337AB7 !important;
 }
+#commentList{
+	width:80%;
+	background-color:#DBDBDB;
+}
+#commentList td{
+	border-bottom: 1px solid #BCBCBC;
+}
+#commentList tr:last-child>td{
+	
+}
+#commentList td:nth-child(2){
+	width:20px;
+}
 
+#boardTable{
+	width:80%;
+	min-height:500px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+#boardTable tr:nth-child(1){
+	height:50px;
+	border-bottom:1px solid #BCBCBC;
+}
+#boardTable tr:nth-child(2),#boardTable tr:nth-child(3){
+	border-bottom:1px solid #BCBCBC;
+	height:10px;
+}
+#boardTable tr:last-child>td{
+	padding:10px;
+}
+#boardTable th:first-child{
+	width:10%;
+	border-right:1px solid black;
+}
 
 .fc-sun{color:red;}
 .fc-sat {color:#007dc3}
