@@ -33,19 +33,22 @@
 <div id="article">
 	
 	<center>
-	<table id="club_list" ">
+	<h2>동 아 리</h2>
+	<table id="club_list" >
 	<%
 		String han=URLEncoder.encode("한비");
 		String kkoon=URLEncoder.encode("꾼");
+		String mr=URLEncoder.encode("M.R.Crew");
+		String iris=URLEncoder.encode("아이리스");
 	%>
 		<tr>
-			<a href="#"><td><img class="img-rounded" src="assets/image/ex.jpg" width="90%" height="90%"><br>M.R Crew</td></a>
+			<td onclick="location.href='introduce.do?club=<%=mr%>'"><img class="img-rounded" src="assets/image/ex.jpg" width="90%" height="90%"><br>M.R Crew</td>
 			<td onclick="location.href='introduce.do?club=<%=kkoon%>'"><img class="img-rounded" src="assets/image/kkoon.jpg" width="90%" height="90%"><br>꾼</td>
 			
 		</tr>
 		<tr>
 			<td onclick="location.href='introduce.do?club=<%=han%>'"><img class="img-rounded" src="assets/image/han.jpg" width="90%" height="90%"><br>한비</td>
-			<a href="#"><td><img class="img-rounded" src="assets/image/iris.jpg" width="90%" height="90%"><br>아이리스</td></a>
+			<td onclick="location.href='introduce.do?club=<%=iris%>'"><img class="img-rounded" src="assets/image/iris.jpg" width="90%" height="90%"><br>아이리스</td>
 		</tr>
 		<% /* 
 			List clubList = (List) request.getAttribute("clubList");

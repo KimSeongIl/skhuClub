@@ -15,10 +15,16 @@ ClubData viewClub=(ClubData)request.getAttribute("viewClub");
 String homepage="";
 String clubExplain="";
 String clubEvent="";
+String image="";
+String member="";
+String phone="";
 if(viewClub!=null){
 homepage="<a href=//"+viewClub.getHomePage()+" target='_blank'>"+viewClub.getHomePage()+"</a>";//링크르 걸어주기위해서 ( //를 해줘야 상대경로 안가짐  )
 clubExplain=viewClub.getClubExplain();
 clubEvent=viewClub.getClubEvent();
+image=viewClub.getImage();
+member=viewClub.getMember();
+phone=viewClub.getPhone();
 
 if(viewClub.getHomePage()==null){
 	homepage="";
@@ -29,20 +35,23 @@ if(clubExplain==null){
 if(clubEvent==null){
 	clubEvent="";
 }
+if(image==null){
+	image="";
+}
+if(member==null){
+	member="";
+}
+if(phone==null){
+	phone="";
+}
 }
 %>
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
 
-
- <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-   <!-- <link href="css/scrolling-nav.css" rel="stylesheet"> -->
-
+ 
 
 
     <!-- Intro Section -->
@@ -51,23 +60,26 @@ if(clubEvent==null){
             <div class="row">
                 <div class="col-lg-12">
                  <h1><%=club %></h1>
-                <div class="img" style="width:350px; float:left;">
-                    <img src="">
+                 <div style="margin:auto;max-width:900px;">
+                <div  style="width:300px; border:3px solid #E3E3E3;border-radius:5px;float:left;text-align:center;padding:10px;">
+                    <img src="<%=image %>" width="250px" >
+               </div>
+               <div style="float:left;margin-left:50px;">
+                    
+                    <br><br><br>
+                    	현회장:&nbsp;<%=member %><br><br>
+                    	연락처:&nbsp;<%=phone %><br><br>
+                    
+                   		 홈페이지:&nbsp;<%=homepage %>
+                    
                 </div>
-                <div class="detail" style="padding:10px 10px 10px 500px;">
-                    
-                    
-                    <p>현회장:</p>
-                    <p>연락처:</p>
-                    
-                    <p>홈페이지:<%=homepage %></p>
-                    
                 </div>
                 </div>
             </div>
         </div>
+        
     </section>
-
+<br><br>	
     <!-- About Section -->
     <section id="about" >
 <nav class="navbar navbar-default">

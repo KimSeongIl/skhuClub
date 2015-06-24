@@ -47,8 +47,9 @@ a{
 		margin: auto;
 		
 	}
+	
 	#article{
-		min-height:600px;
+		min-height:700px;
 		margin:auto;
 	}
 	#footer{
@@ -106,7 +107,7 @@ a{
 	text-align:center;
 	margin: auto;
 	margin-top:30px;
-	padding-bottom:5px;
+	
 }
 #footerList>li>a{
 	color:white;
@@ -170,8 +171,23 @@ a{
 }
 #board{
 	margin:auto;
-	width:100%;
+	width:90%;
 	text-align:center;
+}
+#board td:first-child{
+	width:5%;
+}
+#board td:nth-child(2){
+	width:50%;
+}
+#board td:nth-child(3){
+	width:15%;
+}
+#board td:nth-child(4){
+	width:15%;
+}
+#board td:nth-child(5){
+	width:5%;
 }
 #board th{
 	text-align:center;
@@ -282,7 +298,7 @@ a{
 <script src="assets/js/skhuClub.js"></script>
 
 </head>
-<body style="background-color:#EEEEEE;">
+<body>
 	<div id="layered" ></div>
 	<div id="loginDiv">
 		<div id="loginClose">

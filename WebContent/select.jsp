@@ -19,7 +19,8 @@
 		String start = (String) request.getAttribute("start");
 		String end = (String) request.getAttribute("end");
 	%>
-
+	<div style="width:50%;margin:auto;" >
+	
 	<form method="post" class="form-inline">
 		<input type="hidden" name="start" value="<%=start%>">
 		<input type="hidden" name="end" value="<%=end%>"><br>
@@ -38,6 +39,8 @@
 			onclick="window.opener.select(this.form);self.close()">
 		</div>
 	</form>
+	
+	</div>
 
 
 </body>

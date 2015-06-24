@@ -84,17 +84,20 @@ public class ClubBean {
 	public ClubData viewClub(String name){
 		ClubData club=null;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select name,homepage,clubexplain,clubevent from club where name=? ");){
+				PreparedStatement pstmt=conn.prepareStatement("select c.name,m.name,phone,homepage,clubexplain,clubevent,image from club c left outer join member m on c.name=m.authority where c.name=? ");){
 
 			pstmt.setString(1, name);
 
 			try(ResultSet rs=pstmt.executeQuery();){
 				if(rs.next()){
 					club=new ClubData();
-					club.setName(rs.getString("name"));
+					club.setName(rs.getString("c.name"));
 					club.setHomePage(rs.getString("homepage"));
 					club.setClubExplain(rs.getString("clubexplain"));
 					club.setClubEvent(rs.getString("clubevent"));
+					club.setImage(rs.getString("image"));
+					club.setMember(rs.getString("m.name"));
+					club.setPhone(rs.getString("phone"));
 
 				}
 			}catch(Exception ee){}

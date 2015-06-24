@@ -1,4 +1,4 @@
-<link href='assets/css/fullcalendar.css' rel='stylesheet' />
+﻿<link href='assets/css/fullcalendar.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='assets/js/moment.min.js'></script>
 
@@ -12,6 +12,7 @@
 	
 	
 	<div id="article">
+		<h2 align="center">동 아 리 일 정</h2><br><br>
 		<div id="calendar" >
 		</div>
 	</div>

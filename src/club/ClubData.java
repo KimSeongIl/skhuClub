@@ -6,6 +6,9 @@ public class ClubData {
 	private String clubExplain;
 	private String homePage;
 	private String clubEvent;
+	private String image;
+	private String member;
+	private String phone;
 	
 	public void setClubExplain(String clubExplain){
 		this.clubExplain=clubExplain;
@@ -35,5 +38,23 @@ public class ClubData {
 	}
 	public String getHomePage(){
 		return homePage;
+	}
+	public void setImage(String image){
+		this.image=image;
+	}
+	public String getImage(){
+		return image;
+	}
+	public void setMember(String member){
+		this.member=member;
+	}
+	public String getMember(){
+		return member;
+	}
+	public void setPhone(String phone){
+		this.phone=phone;
+	}
+	public String getPhone(){
+		return phone;
 	}
 }

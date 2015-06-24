@@ -6,7 +6,8 @@
 	<%
 		MemberData member=(MemberData)request.getAttribute("member");
 	%>
-	<center>
+	<center><h2>정 보 수 정</h2><br><br><br><br>
+	<div style="max-width:300px;">
 	<form id="modifyForm"  method="post" class="form-inline" >
 	&nbsp;&nbsp;&nbsp;아이디: <input type="text" name="uid" value="<%=member.getId() %>" class="form-control" readonly><br><br>
 	비밀번호: <input type="password" name="password" value="<%=member.getPw() %>" class="form-control" readonly><br><br>
@@ -20,5 +21,6 @@
 	<input id="modifyBtn" type="button" value="정보수정" class="btn btn-primary" onclick="memberModify()">
 	<span id="mreset"></span>
 	</form>
+	</div>
 	</center>
 </div>
