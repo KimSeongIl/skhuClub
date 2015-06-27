@@ -22,10 +22,10 @@
 		<%}else{ %>
 		<form action="boardUpdateSuccess.do?bid=<%=bid %>" method="post">
 		<%} %>
-			<table style="width:700px;margin:auto; border-top:2px solid black;border-bottom:2px solid black;">
+			<table style="width:90%;margin:auto; margin-top:50px;border-top:2px solid black;border-bottom:2px solid black;">
 				<tr style="border-bottom:1px solid #BCBCBC;">
 					<th style="border-right:1px solid #BCBCBC;">제목</th>
-					<td><input style="width:100%;border:0px;background-color:#EEEEEE;" type="text" placeholder="제목을 입력하세요" name="btitle" value="<%=btitle%>"></td>
+					<td><input style="width:100%;border:0px;" type="text" placeholder="제목을 입력하세요" name="btitle" value="<%=btitle%>"></td>
 				</tr>
 				<tr style="border-bottom:1px solid #BCBCBC;">
 					<th style="border-right:1px solid #BCBCBC;">파일</th>
@@ -33,7 +33,7 @@
 				</tr>
 				<tr>
 					<th style="border-right:1px solid #BCBCBC;">내용</th>
-					<td><textarea name="bcontent" id="ir1" rows="10" cols="100" style="width:100%; height:300px; display:none;"><%=bcontent %></textarea>
+					<td><textarea name="bcontent" id="ir1" rows="10" cols="100" style="width:100%; height:400px; display:none;"><%=bcontent %></textarea>
 				</tr>
 			</table>
 			<input type="hidden" name="category" value="<%=category%>"><br>

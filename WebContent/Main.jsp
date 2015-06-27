@@ -1,4 +1,4 @@
-</div>
+﻿</div>
 
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -14,31 +14,31 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="assets/image/main_visual_1.jpg""width="100%" alt="1">
+      <img src="assets/image/main5.jpg" width="100%" alt="1">
       <div class="carousel-caption">
-        
+        	
       </div>
     </div>
     <div class="item">
-      <img src="assets/image/main_visual_2.jpg"  width="100%" alt="2">
+      <img src="assets/image/main2.jpg"  width="100%" alt="2">
       <div class="carousel-caption">
         
       </div>
     </div>
      <div class="item">
-      <img src="assets/image/main_visual_3.jpg" width="100%" alt="3">
+      <img src="assets/image/main3.jpg" width="100%" alt="3">
       <div class="carousel-caption">
         
       </div>
     </div>
      <div class="item">
-      <img src="assets/image/main_visual_4.jpg" width="100%" alt="4">
+      <img src="assets/image/main4.jpg" width="100%" alt="4">
       <div class="carousel-caption">
         
       </div>
     </div>
      <div class="item">
-      <img src="assets/image/main_visual_5.jpg" width="100%" alt="5">
+      <img src="assets/image/main1.jpg" width="100%" alt="5">
       <div class="carousel-caption">
         
       </div>

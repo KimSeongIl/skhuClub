@@ -174,6 +174,9 @@ a{
 	width:90%;
 	text-align:center;
 }
+#board tr:first-child{
+	background-color:#f5f5f5;
+}
 #board td:first-child{
 	width:5%;
 }
@@ -285,6 +288,7 @@ a{
 	width:10%;
 	border-right:1px solid black;
 }
+
 
 .fc-sun{color:red;}
 .fc-sat {color:#007dc3}
