@@ -161,7 +161,9 @@ function memberSubmit(check){
 	
 	if(check.id=='signupForm'){
 		alert("회원가입을 축하드립니다")
-		check.submit();
+		
+		location.href('main.do')
+		
 	}
 	
 	else if(check.id='modifyForm'){

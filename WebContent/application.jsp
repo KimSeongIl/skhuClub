@@ -16,7 +16,7 @@
 	<form action="insertApplication.do" name="appicationForm" id="applicationForm" method="post">
 
     학년<br>
-	<input type="text" class="form-control" placeholder="학년을 입려해주세요" name="grade"><br>
+	<input type="text" class="form-control" placeholder="학년을 입력해주세요" name="grade"><br>
 	학과<br>
 	<input type="text" class="form-control" placeholder="학과를 입력해주세요" name="department"><br>
 	자기소개<br>
@@ -26,7 +26,7 @@
 	
 
 
-<div style="text-align:center"><input type="submit" class="btn btn-primary" value="지원하기" >&nbsp;<a class="btn btn-info" onclick="history.back()">돌아가기</a></div>
+<div style="text-align:center"><input type="submit" class="btn btn-primary" value="지원하기" >&nbsp;<a class="btn btn-default" onclick="history.back()">돌아가기</a></div>
 	
 	</form>
 	</div>
