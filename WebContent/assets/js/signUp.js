@@ -8,7 +8,7 @@ function memberSubmit(check){
 	{
 		alert("아이디를 입력하지 않았습니다.")
 		check.uid.focus()
-		return
+		return false;
 	}
 
 	//아이디 유효성검사 (영문자랑 숫자만)글자수(6~12)인지 검사
@@ -22,11 +22,11 @@ function memberSubmit(check){
 
 		alert("아이디는 영어와 숫자만 입력해주세요.(글자수는 6~12)")
 		check.uid.focus();
-		return
+		return false;
 	}
 	if(!overlap){
 		alert("중복확인을 먼저 해주세요!");
-		return
+		return false;
 	}
 	}
 	
@@ -36,7 +36,7 @@ function memberSubmit(check){
 	{
 		alert("비밀번호를 입력하지 않았습니다")
 		check.password.focus();
-		return
+		return false;
 
 	}
 
@@ -52,7 +52,7 @@ function memberSubmit(check){
 
 		alert("비밀번호는 영어,숫자,특수문자 조합으로 해주세요.(글자수는 6~12)")
 		check.password.focus();
-		return
+		return false;
 
 
 	}
@@ -66,7 +66,7 @@ function memberSubmit(check){
 		check.password.value=""
 			check.passwordCheck.value=""
 				check.password.focus()
-				return
+				return false;
 	}
 	
 
@@ -76,7 +76,7 @@ function memberSubmit(check){
 	{
 		alert("학번을 입력하지 않았습니다.")
 		check.id.focus()
-		return
+		return false;
 	}
 
 	//학번에 숫자만 입력가능하도록 검사 
@@ -89,7 +89,7 @@ function memberSubmit(check){
 
 		alert("학번은 숫자만 가능합니다")
 		check.studentNum.focus();
-		return
+		return false;
 
 	}
 	}
@@ -99,7 +99,7 @@ function memberSubmit(check){
 	{
 		alert("이름을 입력하지 않았습니다.")
 		check.id.focus()
-		return
+		return false;
 	}
 
 	for (i=0;i<check.name.value.length ;i++ )
@@ -110,7 +110,7 @@ function memberSubmit(check){
 			alert ("이름는 소문자, 숫자만 입력불가능합니다.")
 			check.id.focus()
 			
-			return
+			return false;
 		}
 	}
 	
@@ -123,7 +123,7 @@ function memberSubmit(check){
 	{
 		alert("휴대폰 번호를 입력하지 않았습니다.")
 		check.id.focus()
-		return
+		return false;
 	}
 
 	//휴대폰 번호 유효성 검사 
@@ -134,7 +134,7 @@ function memberSubmit(check){
 	{
 		alert("전화번호 형식에 맞지 않습니다 ");
 		check.phone.focus()
-		return
+		return false;
 	}
 	
 //	이메일 입력 여부 검사
@@ -142,7 +142,7 @@ function memberSubmit(check){
 	{
 		alert("이메일을 입력하지 않았습니다.")
 		check.id.focus()
-		return
+		return false;
 	}
 
 	//이메일 형식에 맞는지 검사 
@@ -154,15 +154,15 @@ function memberSubmit(check){
 
 		alert("이메일 형식에 맞지 않습니다 ")
 		check.email.focus();
-		return
+		return false;
 
 	}
 
 	
 	if(check.id=='signupForm'){
 		alert("회원가입을 축하드립니다")
-		
-		location.href('main.do')
+		return true;
+		//location.href('insertMember.do')
 		
 	}
 	

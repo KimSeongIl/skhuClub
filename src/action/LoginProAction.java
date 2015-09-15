@@ -13,6 +13,7 @@ public class LoginProAction implements CommandAction{
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
 		HttpSession session = request.getSession();
+		
 		LogonBean dbPro=LogonBean.getInstance();
 		MemberData check=dbPro.userCheck(id, pw);
 		

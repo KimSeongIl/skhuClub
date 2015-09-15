@@ -6,6 +6,7 @@
 			String id=check.getId();
 			String name=check.getName();
 			String auth=check.getAuthority();
+			
 			session.setAttribute("id",id);
 			session.setAttribute("name",name);
 			session.setAttribute("auth",auth);

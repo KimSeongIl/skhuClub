@@ -8,7 +8,7 @@
 	<b>회원가입</b><br>
 	<hr>
 
-	<form action="" name="signupForm" id="signupForm" method="post" class="form-inline">
+	<form action="insertMember.do" name="signupForm" id="signupForm" method="post" class="form-inline">
          &nbsp;&nbsp;&nbsp;아이디
     
 	<input type="text" class="form-control" placeholder="아이디의 글자수(6~12)" name="uid">
@@ -31,7 +31,7 @@
 	<hr>
 	
 
-<button type="button" class="btn btn-primary" id="join" onclick="memberSubmit(this.form)">가입하기</button>
+<input type="submit" class="btn btn-primary" id="join" onclick="if(!memberSubmit(this.form)){return false;}" value="가입하기"/>
 	<br><br>
 	</form>
 	</div>

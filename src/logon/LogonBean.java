@@ -33,6 +33,7 @@ public class LogonBean {
 				if(rs.next()){
 					bean = new MemberData();
 					bean.setId(rs.getString("id"));
+					
 					bean.setName(rs.getString("name"));
 					bean.setAuthority(rs.getString("authority"));
 				}
