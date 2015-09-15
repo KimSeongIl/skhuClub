@@ -13,18 +13,18 @@ public class InsertApplicationAction implements CommandAction {
 		
 		String grade=request.getParameter("grade");
 		String department=request.getParameter("department");
-		String self_instroduction=request.getParameter("self_instroduction");
+		String instroduction=request.getParameter("instroduction");
 		HttpSession session=request.getSession();
 		String uid=(String)session.getAttribute("id");
-		String club=request.getParameter("club");
+		String clubname=request.getParameter("club");
 		
 		ApplyData app=new ApplyData();
 		
 		app.setUid(uid);
 		app.setGrade(grade);
 		app.setDepartment(department);
-		app.setSelf_instroduction(self_instroduction);
-		app.setClub(club);
+		app.setInstroduction(instroduction);
+		app.setClubName(clubname);
 		ApplyBean dbApp=ApplyBean.getInstance();
 		
 		dbApp.insertApply(app);

@@ -15,12 +15,12 @@
 
 	<form action="insertApplication.do" name="appicationForm" id="applicationForm" method="post">
 
-    학년<br>
+          학년<br>
 	<input type="text" class="form-control" placeholder="학년을 입력해주세요" name="grade"><br>
 	학과<br>
 	<input type="text" class="form-control" placeholder="학과를 입력해주세요" name="department"><br>
 	자기소개<br>
-	<textarea class="form-control" placeholder="300자이내로 작성해주세요" name="self_instroduction"></textarea>
+	<textarea class="form-control" placeholder="300자이내로 작성해주세요" name="instroduction"></textarea>
 	<input type="hidden" name="club" value="<%=club %>">
 	<hr>
 	

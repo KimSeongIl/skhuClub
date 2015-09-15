@@ -20,24 +20,26 @@ public class ApplyBean {
 	
 	public void insertApply(ApplyData app){
 	  String uid=app.getUid();
+	  String clubname=app.getClubName();
 	  String grade=app.getGrade();
 	  String department=app.getDepartment();
-	  String self_instroduction=app.getSelf_instroduction();
-	  String club=app.getClub();
+	  String instroduction=app.getInstroduction();
+
 	  
 	  try(
 			  //디비연결
 			  Connection conn=Conn.getConnection();
-			  PreparedStatement pstmt=conn.prepareStatement("insert into apply(uid,grade,department,acontent,club) values(?,?,?,?,?)");
+			  PreparedStatement pstmt=conn.prepareStatement("insert into application(uid,clubname,grade,department,introduction) values(?,?,?,?,?)");
 			  //쿼리문 실행
 			  //디비 인젝션을 방지 
 			  
 		 ){
 		  pstmt.setString(1, uid);
-		  pstmt.setString(2, grade);
-		  pstmt.setString(3, department);
-		  pstmt.setString(4,self_instroduction);
-		  pstmt.setString(5, club);
+		  pstmt.setString(2, clubname);
+		  pstmt.setString(3, grade);
+		  pstmt.setString(4,department);
+		  pstmt.setString(5, instroduction);
+		  
 		  pstmt.executeUpdate();
 		  
 		  

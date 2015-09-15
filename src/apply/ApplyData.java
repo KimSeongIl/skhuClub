@@ -5,8 +5,8 @@ public class ApplyData {
 	private String uid;
 	private String grade;
 	private String department;
-	private String self_instroduction;
-	private String club;
+	private String instroduction;
+	private String clubname;
 	
 	public void setUid(String uid){
 		this.uid=uid;
@@ -21,8 +21,8 @@ public class ApplyData {
 	public void setDepartment(String department){
 		this.department=department;
 	}
-	public void setSelf_instroduction(String self_instroduction){
-		this.self_instroduction=self_instroduction;
+	public void setInstroduction(String instroduction){
+		this.instroduction=instroduction;
 	}
 	
 	public String getGrade(){
@@ -32,14 +32,14 @@ public class ApplyData {
 	public String getDepartment(){
 		return department;
 	}
-	public String getSelf_instroduction(){
-		return self_instroduction;
+	public String getInstroduction(){
+		return instroduction;
 	}
-	public void setClub(String club){
-		this.club=club;
+	public void setClubName(String clubname){
+		this.clubname=clubname;
 	}
-	public String getClub(){
-		return club;
+	public String getClubName(){
+		return clubname;
 	}
 	
 	
