@@ -23,7 +23,7 @@ public class ApplyBean {
 	  String clubname=app.getClubName();
 	  String grade=app.getGrade();
 	  String department=app.getDepartment();
-	  String instroduction=app.getInstroduction();
+	  String instroduction=app.getIntroduction();
 
 	  
 	  try(
@@ -51,6 +51,38 @@ public class ApplyBean {
 	  
 	  
 		
+	}
+	public List getApplyAdmin(ApplyData data){
+		List list=null;
+		try(
+				Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select uid,(select name from member where id=uid) name,(select phone from member where id=uid) phone,clubname,grade,department,introduction,applydate from application where clubname=?;");){
+				pstmt.setString(1, data.getClubName());
+			try(ResultSet rs=pstmt.executeQuery();){
+				list=new ArrayList<ApplyData>();
+				if(rs.next()){
+					do{
+						ApplyData app=new ApplyData();
+						app.setUid(rs.getString("uid"));
+						app.setName(rs.getString("name"));
+						app.setPhone(rs.getString("phone"));
+						app.setClubName(rs.getString("clubname"));
+						app.setGrade(rs.getString("grade"));
+						app.setDepartment(rs.getString("department"));
+						app.setIntroduction(rs.getString("introduction"));
+						app.setApplyDate(rs.getTimestamp("applydate"));
+						
+						list.add(app);
+					}while(rs.next());
+				}
+				
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 	
 	

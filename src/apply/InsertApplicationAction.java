@@ -23,7 +23,7 @@ public class InsertApplicationAction implements CommandAction {
 		app.setUid(uid);
 		app.setGrade(grade);
 		app.setDepartment(department);
-		app.setInstroduction(instroduction);
+		app.setIntroduction(instroduction);
 		app.setClubName(clubname);
 		ApplyBean dbApp=ApplyBean.getInstance();
 		

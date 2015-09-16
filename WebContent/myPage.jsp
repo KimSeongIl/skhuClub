@@ -1,12 +1,36 @@
-﻿<script src="assets/js/signUp.js"></script>
+﻿<%
+String uid=(String)session.getAttribute("id");
+if(uid==null){
+	out.println("<script>alert('로그인 해주세요!')</script>");
+	out.println("<script>location.href='main.do'</script>");
+}
+%>
+<div style="width:100%;padding-left:100px;">
+<ul>
+	<li style="float:left;margin-right:50px;"><a href="myPage.do">정보수정</a></li>
+	<%String auth=(String)session.getAttribute("auth");
+	  if(auth==null){%>
+	<li style="float:left;"><a href="#">지원서 관리</a></li>
+	<%}else{ %>
+	<li style="float:left;"><a href="applicationManagement.do">지원서 관리</a></li>
+	<%} %>
+</ul>
+</div>
+<br>
+<script src="assets/js/signUp.js"></script>
 <%@page import="member.MemberData" %>
+
 <div id="article">
 	
 	
 	<%
 		MemberData member=(MemberData)request.getAttribute("member");
 	%>
-	<center><h2>정 보 수 정</h2><br><br><br><br>
+	<center>
+	
+	
+	
+	<h2>정 보 수 정</h2><br><br><br><br>
 	<div style="max-width:300px;">
 	<form id="modifyForm"  method="post" class="form-inline" >
 	&nbsp;&nbsp;&nbsp;아이디: <input type="text" name="uid" value="<%=member.getId() %>" class="form-control" readonly><br><br>
