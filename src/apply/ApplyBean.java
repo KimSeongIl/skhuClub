@@ -84,6 +84,21 @@ public class ApplyBean {
 		
 		return list;
 	}
+	public int deleteApplication(ApplyData data){
+		try(
+				Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("delete from application where uid=? and clubname=?");
+				
+				){
+			pstmt.setString(1,data.getUid());
+			pstmt.setString(2, data.getClubName());
+			
+			pstmt.executeUpdate();
+			return 1;
+		}catch(Exception e){
+			return 2;
+		}
+	}
 	
 	
 	

@@ -1,4 +1,7 @@
-﻿<%
+﻿<style>
+	
+</style>
+<%
 String uid=(String)session.getAttribute("id");
 if(uid==null){
 	out.println("<script>alert('로그인 해주세요!')</script>");
@@ -28,6 +31,7 @@ if(uid==null){
 			<th>학과</th>
 			<th>학년</th>
 			<th>소개</th>
+			<th style="width:5%;"></th>
 		</tr>
 <%List<ApplyData> list=(ArrayList<ApplyData>)request.getAttribute("list");
  for(int i=0;i<list.size();i++){
@@ -36,6 +40,7 @@ if(uid==null){
  	out.println("<td>"+list.get(i).getDepartment()+"</td>");
  	out.println("<td>"+list.get(i).getGrade()+"</td>");
  	out.println("<td>"+list.get(i).getIntroduction()+"</td>");
+ 	out.println("<td style='width:5%;text-align:center;' name="+list.get(i).getUid()+"><input type='button' class='btn btn-default btn-sm applyDelete' value='삭제'></td>");
  	out.println("</tr>");
  }%>
  	</table>

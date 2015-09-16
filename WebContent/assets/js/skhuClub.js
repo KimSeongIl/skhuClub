@@ -1,6 +1,23 @@
 	$(document).ready(
 			function() {
 				
+				$('.applyDelete').click(function(){
+					if(confirm('정말 삭제하시겠습니까?')){
+						uid=$(this).parent().attr('name');
+						
+						$.post('applyDelete.aj',{uid:uid},function(data){
+							if(data==1){
+								alert('삭제되었습니다.');
+								location.href="applicationManagement.do";
+							}else{
+								alert('오류가 발생했습니다.');
+							}
+							
+						})
+					}
+					
+				})
+				
 				$('#footer li').hover(function(){
 					$(this).children('a').css('color','#337AB7');
 				},function(){
