@@ -10,7 +10,7 @@ if(uid==null){
 	<li style="float:left;margin-right:50px;"><a href="myPage.do">정보수정</a></li>
 	<%String auth=(String)session.getAttribute("auth");
 	  if(auth==null){%>
-	<li style="float:left;"><a href="#">지원서 관리</a></li>
+	<li style="float:left;"><a href="applyManagement.do">지원서 관리</a></li>
 	<%}else{ %>
 	<li style="float:left;"><a href="applicationManagement.do">지원서 관리</a></li>
 	<%} %>

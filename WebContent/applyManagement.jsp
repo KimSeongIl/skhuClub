@@ -24,20 +24,21 @@ if(uid==null){
 	<h1>지 원 서   관 리</h1>
 	<table border width="100%">
 		<tr>
-			<th>이름</th>
+			<th>동아리명</th>
 			<th>학과</th>
 			<th>학년</th>
 			<th>소개</th>
-			<th style="width:5%;"></th>
+			
+			<th style="width:10%;"></th>
 		</tr>
 <%List<ApplyData> list=(ArrayList<ApplyData>)request.getAttribute("list");
  for(int i=0;i<list.size();i++){
 	 out.println("<tr>");
- 	out.println("<td>"+list.get(i).getName()+"</td>");
+ 	out.println("<td>"+list.get(i).getClubName()+"</td>");
  	out.println("<td>"+list.get(i).getDepartment()+"</td>");
  	out.println("<td>"+list.get(i).getGrade()+"</td>");
  	out.println("<td>"+list.get(i).getIntroduction()+"</td>");
- 	out.println("<td style='width:5%;text-align:center;' name="+list.get(i).getUid()+"><input type='button' class='btn btn-default btn-sm applicationDelete' value='삭제'></td>");
+ 	out.println("<td style='width:10%;text-align:center;' name="+list.get(i).getUid()+" clubname="+list.get(i).getClubName()+"><input type='button' class='btn btn-primary btn-sm applyModify' value='수정'>&nbsp;&nbsp;<input type='button' class='btn btn-default btn-sm applyDelete' value='삭제'></td>");
  	out.println("</tr>");
  }%>
  	</table>

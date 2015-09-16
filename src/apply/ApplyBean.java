@@ -52,6 +52,37 @@ public class ApplyBean {
 	  
 		
 	}
+	public List getApplyById(ApplyData data){
+		List list=null;
+		try(
+				Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select uid,clubname,grade,department,introduction,applydate from application where uid=?;");
+				){
+			pstmt.setString(1, data.getUid());
+			try(ResultSet rs=pstmt.executeQuery();){
+				list=new ArrayList<ApplyData>();
+				if(rs.next()){
+					do{
+					
+						ApplyData app=new ApplyData();
+						app.setUid(rs.getString("uid"));
+						app.setClubName(rs.getString("clubname"));
+						app.setGrade(rs.getString("grade"));
+						app.setDepartment(rs.getString("department"));
+						app.setIntroduction(rs.getString("introduction"));
+						app.setApplyDate(rs.getTimestamp("applydate"));
+						
+						list.add(app);
+					}while(rs.next());
+				}
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 	public List getApplyAdmin(ApplyData data){
 		List list=null;
 		try(
