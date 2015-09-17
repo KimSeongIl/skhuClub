@@ -27,17 +27,21 @@ if(uid==null){
 			<th>이름</th>
 			<th>학과</th>
 			<th>학년</th>
-			<th>소개</th>
-			<th style="width:5%;"></th>
+			<th style="width:15%;"></th>
 		</tr>
 <%List<ApplyData> list=(ArrayList<ApplyData>)request.getAttribute("list");
+
  for(int i=0;i<list.size();i++){
-	 out.println("<tr>");%>
-	 <td>
-	 	<button type="button" class="btn btn-defualt" data-toggle="modal" data-target="#myModal" >
- 	<% out.println(list.get(i).getName()); %>
- 	</button>
- 	</td>
+	out.println("<tr>");
+	out.println("<td class='getName'>"+list.get(i).getName()+"</td>");
+ 	out.println("<td class='getDepartment'>"+list.get(i).getDepartment()+"</td>");
+ 	out.println("<td class='getGrade'>"+list.get(i).getGrade()+"</td>");%>
+ 	
+ 	<% out.println("<td style='width:15%;text-align:center;' name="+list.get(i).getUid()+"><button type='button' phone="+list.get(i).getPhone()+" intro="+list.get(i).getIntroduction()+" class='btn btn-default btn-sm' data-toggle='modal' data-target='#myModal' onclick='applyDetail($(this))' >보기</button>&nbsp;<input type='button' class='btn btn-default btn-sm applicationDelete' value='삭제'></td>");
+ 	out.println("</tr>");
+ }%>
+ 
+ 	</table>
  	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -47,14 +51,18 @@ if(uid==null){
 	      </div>
 	      <div class="modal-body">
 	      
-	       <%
-	       out.println("<p style='text-align:left;'>작성자:</p>"+"<input type='text' class='form-control'  value="+list.get(i).getName()+">"+"<br>");
-	       out.println("<p style='text-align:left;'>학년/학과:</p>"+"<input type='text' class='form-control'  value="+list.get(i).getGrade()+"/"+list.get(i).getDepartment()+">"+"<br>");
-	       out.println("<p style='text-align:left;'>전화번호:</p>"+"<input type='text' class='form-control'  value="+list.get(i).getPhone()+">"+"<br>");
-	       //out.println("<p style='text-align:left;'>학과:</p>"+"<input type='text' class='form-control'  value="+list.get(i).getDepartment()+">"+"<br>");
-	       out.println("<p style='text-align:left;'>자기소개:</p>"+"<textarea class='form-control'>"+list.get(i).getIntroduction()+"</textarea>");
 	       
-	       %>
+	       <p style='text-align:left;'>작성자:</p>
+	       <input type='text' class='form-control' name='getName'  value="#" readonly><br>
+	       <p style='text-align:left;'>학년/학과:</p>
+	       <input type='text' class='form-control'  name='getGrade' value="#"><br>
+	       <p style='text-align:left;'>전화번호:</p>
+	       <input type='text' class='form-control' name='getPhone'  value="#"><br>
+	    
+	       <p style='text-align:left;'>자기소개:</p>
+	       <textarea class='form-control' name='getIntroduction'></textarea>
+	       
+	       
 	      </div>
 	      <div class="modal-footer">
 		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -62,16 +70,7 @@ if(uid==null){
 	    </div>
 	  </div>
 	</div>
- 
-
- 	<% out.println("<td>"+list.get(i).getDepartment()+"</td>");
- 	out.println("<td>"+list.get(i).getGrade()+"</td>");
- 	out.println("<td>"+list.get(i).getIntroduction()+"</td>");
- 	out.println("<td style='width:5%;text-align:center;' name="+list.get(i).getUid()+"><input type='button' class='btn btn-default btn-sm applicationDelete' value='삭제'></td>");
- 	out.println("</tr>");
- }%>
- 
- 	</table>
+ 	
  	
  		
 	
