@@ -55,12 +55,12 @@ if(uid==null){
 	       <p style='text-align:left;'>작성자:</p>
 	       <input type='text' class='form-control' name='getName'  value="#" readonly><br>
 	       <p style='text-align:left;'>학년/학과:</p>
-	       <input type='text' class='form-control'  name='getGrade' value="#"><br>
+	       <input type='text' class='form-control'  name='getGrade' value="#" readonly><br>
 	       <p style='text-align:left;'>전화번호:</p>
-	       <input type='text' class='form-control' name='getPhone'  value="#"><br>
+	       <input type='text' class='form-control' name='getPhone'  value="#" readonly><br>
 	    
 	       <p style='text-align:left;'>자기소개:</p>
-	       <textarea class='form-control' name='getIntroduction'></textarea>
+	       <textarea class='form-control' name='getIntroduction' readonly></textarea>
 	       
 	       
 	      </div>

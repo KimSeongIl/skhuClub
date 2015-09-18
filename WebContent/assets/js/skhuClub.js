@@ -163,18 +163,24 @@
 	}
 	
 	function applyDetail(getThis){
-		var getName,getGrade,getPhone,getDepartment,getIntroduction;
+		var getName,getGrade,getPhone,getDepartment,getIntroduction,getClubName;
 		getName=getThis.parent().parent().find('.getName').html();
 		getGrade=getThis.parent().parent().find('.getGrade').html();
 		getPhone=getThis.attr('phone');
 		getDepartment=getThis.parent().parent().find('.getDepartment').html();
 		getIntroduction=getThis.attr('intro');
+		getClubName=getThis.parent().parent().find('.getClubName').html();
+	    alert(getName+'/'+getGrade);
+	    alert(getIntroduction);
 		
 		$('[name=getName]').val(getName);
 		$('[name=getGrade]').val(getGrade+'/'+getDepartment);
 		$('[name=getPhone]').val(getPhone);
-		
 		$('[name=getIntroduction]').val(getIntroduction);
+		
+		$('[name=getClubName]').val(getClubName);
+		
+		
 		
 	}
 	
