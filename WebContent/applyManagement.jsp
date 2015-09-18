@@ -26,9 +26,7 @@ if(uid==null){
 		<tr>
 			<th>동아리명</th>
 			<th>학과</th>
-			<th>학년</th>
-			<th style="width:7%;"></th>
-			
+			<th>학년</th>	
 			<th style="width:13%;"></th>
 		</tr>
 <%List<ApplyData> list=(ArrayList<ApplyData>)request.getAttribute("list");
@@ -37,8 +35,7 @@ if(uid==null){
  	out.println("<td class='getClubName'>"+list.get(i).getClubName()+"</td>");
  	out.println("<td class='getDepartment'>"+list.get(i).getDepartment()+"</td>");
  	out.println("<td class='getGrade'>"+list.get(i).getGrade()+"</td>");
- 	out.println("<td style='width:7%;text-align:center;' name="+list.get(i).getUid()+"><button type='button' phone="+list.get(i).getPhone()+" intro="+list.get(i).getIntroduction()+" class='btn btn-default btn-sm' data-toggle='modal' data-target='#myModal' onclick='applyDetail($(this))' >보기</button></td>");
- 	out.println("<td style='width:13%;text-align:center;' name="+list.get(i).getUid()+" clubname="+list.get(i).getClubName()+"><input type='button' class='btn btn-primary btn-sm applyModify' value='수정'>&nbsp<input type='button' class='btn btn-default btn-sm applyDelete' value='삭제'></td>");
+ 	out.println("<td style='width:13%;text-align:center;' name="+list.get(i).getUid()+" clubname="+list.get(i).getClubName()+"><button type='button' phone="+list.get(i).getPhone()+" intro="+list.get(i).getIntroduction()+" class='btn btn-default btn-sm' data-toggle='modal' data-target='#myModal' onclick='applyDetail($(this))' >보기</button>&nbsp<input type='button' class='btn btn-default btn-sm applyDelete' value='삭제'></td>");
  	out.println("</tr>");
  }%>
  	</table>
@@ -58,15 +55,13 @@ if(uid==null){
 	       <input type='text' class='form-control' name='getClubName'  value="#" readonly><br>
 	       <p style='text-align:left;'>학년/학과:</p>
 	       <input type='text' class='form-control'  name='getGrade' value="#" readonly><br>
-	       <p style='text-align:left;'>전화번호:</p>
-	       <input type='text' class='form-control' name='getPhone'  value="#" readonly><br>
-	    
 	       <p style='text-align:left;'>자기소개:</p>
 	       <textarea class='form-control' name='getIntroduction' readonly></textarea>
 	       
 	       
 	      </div>
 	      <div class="modal-footer">
+	      <button type="button" class="btn btn-primary" >수정</button>
 		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	      </div>
 	    </div>

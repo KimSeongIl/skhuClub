@@ -170,8 +170,7 @@
 		getDepartment=getThis.parent().parent().find('.getDepartment').html();
 		getIntroduction=getThis.attr('intro');
 		getClubName=getThis.parent().parent().find('.getClubName').html();
-	    alert(getName+'/'+getGrade);
-	    alert(getIntroduction);
+
 		
 		$('[name=getName]').val(getName);
 		$('[name=getGrade]').val(getGrade+'/'+getDepartment);
