@@ -183,8 +183,32 @@
 		
 	}
 	
-	function applyPop(){
+	function applyManagementPop(){
 		
+		
+		$('[name=getGrade]').attr("readonly",false);
+		$('[name=getIntroduction]').attr("readonly",false);
+		$('[name=getClubName]').attr("readonly",false);
+		
+		
+		$('[name=applyModify]').css({"visibility":"hidden"});
+		$('[name=applySave]').css({"visibility":"visible"});
+		$('[name=applyCancel]').css({"visibility":"visible"});
+		
+	}
+	
+	function applyManagementSave(){}
+	
+	
+	function applyManagementCancel(){
+		
+		$('[name=getGrade]').attr("readonly",true);
+		$('[name=getIntroduction]').attr("readonly",true);
+		$('[name=getClubName]').attr("readonly",true);
+		
+		$('[name=applyModify]').css({"visibility":"visible"});
+		$('[name=applySave]').css({"visibility":"hidden"});
+		$('[name=applyCancel]').css({"visibility":"hidden"});
 	}
 	
 	

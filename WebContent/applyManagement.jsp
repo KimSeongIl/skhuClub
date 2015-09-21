@@ -31,7 +31,7 @@ if(uid==null){
 		</tr>
 <%List<ApplyData> list=(ArrayList<ApplyData>)request.getAttribute("list");
  for(int i=0;i<list.size();i++){
-	 out.println("<tr>");
+	 out.println("<tr style='height:40px;'>");
  	out.println("<td class='getClubName'>"+list.get(i).getClubName()+"</td>");
  	out.println("<td class='getDepartment'>"+list.get(i).getDepartment()+"</td>");
  	out.println("<td class='getGrade'>"+list.get(i).getGrade()+"</td>");
@@ -60,9 +60,9 @@ if(uid==null){
 	       
 	       
 	      </div>
-	      <div style="vertical-align:middle; margin-bottom:10px;">
-	      <button  type="button" class="btn btn-primary btn-sm" >수정</button>
-		
+	      <div style=" margin-bottom:10px;">
+	      <button style="text-algin:center;" type="button" class="btn btn-primary btn-sm" name="applyModify" onclick="applyManagementPop()" >수정</button>
+		  <button style="vertical-align:right; visibility: hidden;" type="button" class="btn btn-primary btn-sm" name="applySave">저장</button>&nbsp;<button style="vertical-align:right;visibility: hidden;" type="button" class="btn btn-primary btn-sm" name="applyCancel" onclick="applyManagementCancel()">취소</button>
 	      </div>
 	    </div>
 	  </div>
