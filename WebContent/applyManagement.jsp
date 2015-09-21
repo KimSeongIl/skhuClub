@@ -60,9 +60,9 @@ if(uid==null){
 	       
 	       
 	      </div>
-	      <div class="modal-footer">
-	      <button type="button" class="btn btn-primary" >수정</button>
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      <div style="vertical-align:middle; margin-bottom:10px;">
+	      <button  type="button" class="btn btn-primary btn-sm" >수정</button>
+		
 	      </div>
 	    </div>
 	  </div>

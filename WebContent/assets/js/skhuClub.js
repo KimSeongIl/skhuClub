@@ -183,6 +183,10 @@
 		
 	}
 	
+	function applyPop(){
+		
+	}
+	
 	
 		
 	
