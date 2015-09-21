@@ -3,7 +3,7 @@ package member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import action.UserService;//디비 암호화 
 import action.CommandAction;
 
 public class InsertMemberAction implements CommandAction{
@@ -12,11 +12,14 @@ public class InsertMemberAction implements CommandAction{
 		request.setCharacterEncoding("utf-8");
 		
 		String uid=request.getParameter("uid");
-		String password=request.getParameter("password");
+		String p=request.getParameter("password");
+		String password=UserService.encryptPasswd(p);
 		int studentNum=Integer.parseInt(request.getParameter("studentNum"));
 		String name=request.getParameter("name");
 		String phone=request.getParameter("phone");
 		String email=request.getParameter("email");
+		
+	   
 		
 		MemberData mem=new MemberData();
 		
