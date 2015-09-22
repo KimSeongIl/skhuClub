@@ -207,8 +207,7 @@
 		getDepartment=$('[name=getDepartment]').val();
 		getIntroduction=$('[name=getIntroduction]').val();
 		
-		
-		
+	
 			$.ajax({
 				type:"POST",
 				url:"applyUpdate.aj",
@@ -226,7 +225,9 @@
 				}
 				
 			});
-		
+			
+			$('[name=modalHidden]').attr("aria-hidden",true).click();//저장버튼 클릭후 모달닫기
+			
 		
 		
 		
