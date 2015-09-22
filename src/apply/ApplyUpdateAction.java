@@ -9,7 +9,8 @@ import action.CommandAction;
 public class ApplyUpdateAction implements CommandAction {
 	public String requestPro(HttpServletRequest request,HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("UTF-8");
-		String uid=(String)request.getParameter("uid");
+		HttpSession session=request.getSession();
+		String uid=(String)session.getAttribute("id");
 		String clubName=(String)request.getParameter("clubName");
 		String department=(String)request.getParameter("department");
 		String grade=(String)request.getParameter("grade");
@@ -18,7 +19,6 @@ public class ApplyUpdateAction implements CommandAction {
 		System.out.println(grade);
 		
 		ApplyData data=new ApplyData();
-		HttpSession session=request.getSession();
 		data.setUid(uid);
 		data.setClubName(clubName);
 		data.setDepartment(department);
@@ -28,7 +28,7 @@ public class ApplyUpdateAction implements CommandAction {
 		ApplyBean bean=ApplyBean.getInstance();
 		bean.modifyApply(data);
 		
-		return "applyManagement.jsp";
+		return "applyUpdate.jsp";
 	}
 
 }

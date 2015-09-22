@@ -190,7 +190,7 @@
 		$('[name=getGrade]').attr("readonly",false);
 		$('[name=getIntroduction]').attr("readonly",false);
 		$('[name=getDepartment]').attr("readonly",false);
-		$('[name=getClubName]').attr("readonly",false);
+		
 		
 		
 		$('[name=applyModify]').css({"display":"none"});
@@ -206,9 +206,9 @@
 		getGrade=$('[name=getGrade]').val();
 		getDepartment=$('[name=getDepartment]').val();
 		getIntroduction=$('[name=getIntroduction]').val();
-		alert(getClubName+"/"+getGrade+"/"+getDepartment+"/"+getIntroduction);
 		
-		$('[name=applySave]').click(function(){
+		
+		
 			$.ajax({
 				type:"POST",
 				url:"applyUpdate.aj",
@@ -217,16 +217,16 @@
 				department:getDepartment,
 				introduction:getIntroduction
 				},
-				dataType:"json",
+				
 				success:function(json){
 					console.log("success updateApply !!");
 				},
-				error: function(){
+				error: function(request,status,error){
 					alert("지원서 정보 수정 실패!");
 				}
 				
 			});
-		});
+		
 		
 		
 		
@@ -240,7 +240,7 @@
 		
 		$('[name=getGrade]').attr("readonly",true);
 		$('[name=getIntroduction]').attr("readonly",true);
-		$('[name=getClubName]').attr("readonly",true);
+		
 		$('[name=getDepartment]').attr("readonly",true);
 		
 		$('[name=applyModify]').css({"display":"inline-block"});
