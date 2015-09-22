@@ -53,16 +53,18 @@ if(uid==null){
 	       
 	       <p style='text-align:left;'>지원 동아리:</p>
 	       <input type='text' class='form-control' name='getClubName'  value="#" readonly><br>
-	       <p style='text-align:left;'>학년/학과:</p>
+	       <p style='text-align:left;'>학년:</p>
 	       <input type='text' class='form-control'  name='getGrade' value="#" readonly><br>
+	       <p style='text-align:left;'>학과:</p>
+	       <input type='text' class='form-control'  name='getDepartment' value="#" readonly><br>
 	       <p style='text-align:left;'>자기소개:</p>
 	       <textarea class='form-control' name='getIntroduction' readonly></textarea>
 	       
 	       
 	      </div>
-	      <div style=" margin-bottom:10px;">
+	      <div style=" width:100%;margin-bottom:10px;">
 	      <button style="text-algin:center;" type="button" class="btn btn-primary btn-sm" name="applyModify" onclick="applyManagementPop()" >수정</button>
-		  <button style="vertical-align:right; visibility: hidden;" type="button" class="btn btn-primary btn-sm" name="applySave">저장</button>&nbsp;<button style="vertical-align:right;visibility: hidden;" type="button" class="btn btn-primary btn-sm" name="applyCancel" onclick="applyManagementCancel()">취소</button>
+		  <button style="text-align:right; display:none;" type="button" class="btn btn-primary btn-sm" name="applySave" onclick="applyManagementSave()">저장</button>&nbsp;<button style="text-align:right;display:none;" type="button" class="btn btn-primary btn-sm" name="applyCancel" onclick="applyManagementCancel()">취소</button>
 	      </div>
 	    </div>
 	  </div>

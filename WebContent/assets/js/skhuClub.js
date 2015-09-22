@@ -173,7 +173,8 @@
 
 		
 		$('[name=getName]').val(getName);
-		$('[name=getGrade]').val(getGrade+'/'+getDepartment);
+		$('[name=getGrade]').val(getGrade);
+		$('[name=getDepartment]').val(getDepartment);
 		$('[name=getPhone]').val(getPhone);
 		$('[name=getIntroduction]').val(getIntroduction);
 		
@@ -188,16 +189,51 @@
 		
 		$('[name=getGrade]').attr("readonly",false);
 		$('[name=getIntroduction]').attr("readonly",false);
+		$('[name=getDepartment]').attr("readonly",false);
 		$('[name=getClubName]').attr("readonly",false);
 		
 		
-		$('[name=applyModify]').css({"visibility":"hidden"});
-		$('[name=applySave]').css({"visibility":"visible"});
-		$('[name=applyCancel]').css({"visibility":"visible"});
+		$('[name=applyModify]').css({"display":"none"});
+		$('[name=applySave]').css({"display":"inline-block"});
+		$('[name=applyCancel]').css({"display":"inline-block"});
 		
 	}
-	
-	function applyManagementSave(){}
+	//apply 지원자
+	function applyManagementSave(){
+	var getClubName,getIntroduction,getDepartment,getGrade;
+		
+		getClubName=$('[name=getClubName]').val();
+		getGrade=$('[name=getGrade]').val();
+		getDepartment=$('[name=getDepartment]').val();
+		getIntroduction=$('[name=getIntroduction]').val();
+		alert(getClubName+"/"+getGrade+"/"+getDepartment+"/"+getIntroduction);
+		
+		$('[name=applySave]').click(function(){
+			$.ajax({
+				type:"POST",
+				url:"applyUpdate.aj",
+				data:{clubName:getClubName,
+				grade:getGrade,
+				department:getDepartment,
+				introduction:getIntroduction
+				},
+				dataType:"json",
+				success:function(json){
+					console.log("success updateApply !!");
+				},
+				error: function(){
+					alert("지원서 정보 수정 실패!");
+				}
+				
+			});
+		});
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	function applyManagementCancel(){
@@ -205,10 +241,11 @@
 		$('[name=getGrade]').attr("readonly",true);
 		$('[name=getIntroduction]').attr("readonly",true);
 		$('[name=getClubName]').attr("readonly",true);
+		$('[name=getDepartment]').attr("readonly",true);
 		
-		$('[name=applyModify]').css({"visibility":"visible"});
-		$('[name=applySave]').css({"visibility":"hidden"});
-		$('[name=applyCancel]').css({"visibility":"hidden"});
+		$('[name=applyModify]').css({"display":"inline-block"});
+		$('[name=applySave]').css({"display":"none"});
+		$('[name=applyCancel]').css({"display":"none"});
 	}
 	
 	

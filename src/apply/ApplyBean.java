@@ -52,6 +52,24 @@ public class ApplyBean {
 	  
 		
 	}
+	//ModifyApply
+	public void modifyApply(ApplyData app){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update application set clubname=?,department=?,grade=?,introduction=? where uid=?");){
+			
+			pstmt.setString(1, app.getClubName());
+			pstmt.setString(2, app.getDepartment());
+			pstmt.setString(3, app.getGrade());
+			pstmt.setString(4, app.getIntroduction());
+			pstmt.setString(5, app.getUid());
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+
+	
 	public List getApplyById(ApplyData data){
 		List list=null;
 		try(
