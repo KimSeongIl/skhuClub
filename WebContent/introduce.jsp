@@ -61,8 +61,8 @@ if(phone==null){
                 <div class="col-lg-12">
                  <h1><%=club %></h1>
                  <div style="margin:auto;max-width:900px;">
-                <div  style="width:300px; border:3px solid #E3E3E3;border-radius:5px;float:left;text-align:center;padding:10px;">
-                    <img src="<%=image %>" width="250px" >
+                <div  style="width:170px;height:177px; border:3px solid #E3E3E3;border-radius:5px;float:left;text-align:center;padding:10px;">
+                    <img src="<%=image %>" width="90%" height="90%" >
                </div>
                <div style="float:left;margin-left:50px;">
                     

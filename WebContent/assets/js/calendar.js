@@ -34,7 +34,7 @@ $(document).ready(function() {
 					start=start.slice(0,19)
 					end=end.slice(0,19)
 				}
-				if(uauth=='관리자'){
+				if(uauth!='관리자'){
 					edit=true
 				}
 				else{
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 		select: function(start, end) {
 			
-			if(uauth=='관리자'){
+			if(uauth!='관리자'){
 				return
 			}
 			var top=(screen.availHeight/2)-(50/2);
@@ -110,7 +110,7 @@ $(document).ready(function() {
 			 	$.post('update.aj',{id:event.id,start:String(event.start),end:String(event.end)})
 			 },
 			 eventClick:function(event,element){
-			 	if(uauth=='관리자'){
+			 	if(uauth!='관리자'){
 			 		return
 			 	}
 			 	

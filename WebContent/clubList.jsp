@@ -48,7 +48,7 @@
 		</tr>
 		<tr>
 			<td onclick="location.href='introduce.do?club=<%=han%>'"><img class="img-rounded" src="assets/image/han.jpg" width="90%" height="90%"><br>한비</td>
-			<td onclick="location.href='introduce.do?club=<%=iris%>'"><img class="img-rounded" src="assets/image/iris.jpg" width="90%" height="90%"><br>아이리스</td>
+			<td onclick="location.href='introduce.do?club=<%=iris%>'"><img class="img-rounded" src="assets/image/main4.jpg" width="90%" height="90%"><br>아이리스</td>
 		</tr>
 		<% /* 
 			List clubList = (List) request.getAttribute("clubList");

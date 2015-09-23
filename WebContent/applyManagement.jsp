@@ -22,7 +22,7 @@ if(uid==null){
 <div id="article">
 <center>
 	<h1>지 원 서   관 리</h1>
-	<table border width="100%">
+	<table width="100%" class="table">
 		<tr>
 			<th>동아리명</th>
 			<th>학과</th>
