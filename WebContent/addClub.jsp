@@ -24,12 +24,23 @@ if(uid==null){
 <br>
 <div id="article">
 	<center>
+<<<<<<< HEAD
 		<h1>동 아 리 추 가</h1>
 		<div width="400px" >
 		<form  class="col-xs-12" method="post" >
 			<label class="col-xs-2">이름</label>
 			 <input style="width:40%;" type="text" name="clubName" class="form-control col-xs-4">
 			 <button class="btn btn-primary" onclick="addClub()">추가</button>
+=======
+		<h1>동 아 리 추 가</h1><br><hr>
+		<div width="400px" >
+		<form  action="clubInsert.do" class="form-inline" method="post" >
+			<div class="form-group">
+    			<label  >동아리 이름</label>&nbsp;
+    			<input type="text" class="form-control" name="clubName" placeholder="Name">
+  			</div><br><br><br>
+  			<button type="submit" class="btn btn-primary">추가</button>
+>>>>>>> bf413bf90a4033f82a506f6292e3011391e10bf0
 		</form>
 		</div>
 	</center>

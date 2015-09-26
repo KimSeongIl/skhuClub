@@ -1,6 +1,8 @@
 package member;
 
+import club.ClubData;
 import conn.Conn;
+
 import java.sql.*;
 import java.util.*;
 
@@ -16,6 +18,50 @@ public class MemberBean {
 		
 	}
 	
+	public List memberList(){
+		List list=new ArrayList<MemberData>();
+		MemberData md=null;
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("select id,studentNum,name,phone,email,authority from member");){
+			try(ResultSet rs=pstmt.executeQuery();){
+				if(rs.next()){
+					do{
+						md=new MemberData();
+						md.setId(rs.getString("id"));
+						md.setSNum(rs.getInt("studentNum"));
+						md.setName(rs.getString("name"));
+						md.setPhone(rs.getString("phone"));
+						md.setEmail(rs.getString("email"));
+						md.setAuthority(rs.getString("authority"));
+						list.add(md);
+
+					}while(rs.next());
+				}
+				
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public void memberAuthModify(String clubName,String uid){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("update member set authority=null where authority=?");
+				){
+			pstmt.setString(1, clubName);
+			pstmt.executeUpdate();
+			PreparedStatement pstmt2=conn.prepareStatement("update member set authority=? where id=?");
+			pstmt2.setString(1, clubName);
+			pstmt2.setString(2, uid);
+			pstmt2.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 	public MemberData getMemberData(String id){
 		MemberData md=null;
 		try(Connection conn=Conn.getConnection();
@@ -124,6 +170,16 @@ public class MemberBean {
 			e.printStackTrace();
 		}
 		return check;
+	}
+	
+	public void memberDelete(String uid){
+		try(Connection conn=Conn.getConnection();
+				PreparedStatement pstmt=conn.prepareStatement("delete from member where id=?");){
+			pstmt.setString(1, uid);
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 }
