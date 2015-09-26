@@ -79,6 +79,28 @@ alert(check.uid.value);
 	
 
 	//학번 입력여부 검사 
+	if(check.studentNum!=null){
+	if(check.studentNum.value=="")
+	{
+		alert("학번을 입력하지 않았습니다.")
+		check.id.focus()
+		return false;
+	}
+
+	//학번에 숫자만 입력가능하도록 검사 
+
+	var studentNumCheck= /^[0-9+]{6,12}$/;
+
+
+	if(!studentNumCheck.test(check.studentNum.value))
+	{
+
+		alert("학번은 숫자만 가능합니다")
+		check.studentNum.focus();
+		return false;
+
+	}
+	}
 	
 	//이름입력 여부 검사 
 	if(check.name.value=="")
