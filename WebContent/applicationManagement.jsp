@@ -17,7 +17,8 @@ if(uid==null){
 	<li style="float:left;margin-right:50px;"><a href="applicationManagement.do">지원서 관리</a></li>
 	<%} 
 	  if("관리자".equals(auth)){%>
-		<li style="float:left;"><a href="addClub.do">동아리 추가</a></li>
+		<li style="float:left;margin-right:50px;"><a href="addClub.do">동아리 추가</a></li>
+		<li style="float:left;"><a href="memberManagement.do">회원 관리</a>
 		<%} %>
 </ul>
 </div>
