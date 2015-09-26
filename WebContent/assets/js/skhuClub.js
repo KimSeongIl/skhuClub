@@ -249,7 +249,30 @@
 		$('[name=applyCancel]').css({"display":"none"});
 	}
 	
-	
-		
+	//동아리 추가 (insert)
+    function addClub(){
+    	var clubName;
+    	clubName=$('[name=clubName]').val();
+    	alert(clubName);
+    	
+    	$.ajax({
+			type:"POST",
+			url:"#",
+			data:{clubName:clubName
+			},
+			
+			success:function(json){
+				console.log("success updateApply !!");
+			},
+			error: function(request,status,error){
+				alert("동아리 추가  실패!");
+			}
+			
+		});
+    	
+    	
+    	
+    	
+    }
 	
 	

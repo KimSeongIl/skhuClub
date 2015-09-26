@@ -3,7 +3,7 @@
 
 	
 
-	<div id="article" style="padding-left:50px;">
+	<div id="article">
 	<br>
 	<b>회원가입</b><br>
 	<hr>

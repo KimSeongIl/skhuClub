@@ -24,10 +24,12 @@ if(uid==null){
 <br>
 <div id="article">
 	<center>
-		<h1>동 아 리 추 가</h1><br>
+		<h1>동 아 리 추 가</h1>
 		<div width="400px" >
-		<form  action="" class="col-xs-12" method="post" >
-			<label class="col-xs-2">이름</label> <input style="width:40%;" type="text" class="form-control col-xs-4">
+		<form  class="col-xs-12" method="post" >
+			<label class="col-xs-2">이름</label>
+			 <input style="width:40%;" type="text" name="clubName" class="form-control col-xs-4">
+			 <button class="btn btn-primary" onclick="addClub()">추가</button>
 		</form>
 		</div>
 	</center>

@@ -1,7 +1,7 @@
 var overlap=false;
 
 function memberSubmit(check){
-
+alert(check.uid.value);
 //	아이디 입력여부 검사 
 	if(check.uid!=null){
 	if(check.uid.value=="")
@@ -11,24 +11,32 @@ function memberSubmit(check){
 		return false;
 	}
 
-	//아이디 유효성검사 (영문자랑 숫자만)글자수(6~12)인지 검사
+ }
+	alert(check.studentNum.value);
+	//학번 검사
+	if(check.studentNum!=null){
+		if(check.studentNum.value=="")
+		{
+			alert("학번을 입력하지 않았습니다.")
+			check.studentNum.focus()
+			return false;
+		}
+
+		//학번에 숫자만 입력가능하도록 검사 
+
+		var uidCheck= /^[0-9+]{6,12}$/;
 
 
-	var idCheck= /^[A-Za-z0-9+]{6,12}$/;
+		if(!studentNumCheck.test(check.uid.value))
+		{
 
+			alert("학번은 숫자만 가능합니다")
+			check.studentNum.focus();
+			return false;
 
-	if(!idCheck.test(check.uid.value))
-	{
-
-		alert("아이디는 영어와 숫자만 입력해주세요.(글자수는 6~12)")
-		check.uid.focus();
-		return false;
-	}
-	if(!overlap){
-		alert("중복확인을 먼저 해주세요!");
-		return false;
-	}
-	}
+		}
+		}
+		
 	
 
 	//비밀번호 입력여부 검사
@@ -71,28 +79,6 @@ function memberSubmit(check){
 	
 
 	//학번 입력여부 검사 
-	if(check.studentNum!=null){
-	if(check.studentNum.value=="")
-	{
-		alert("학번을 입력하지 않았습니다.")
-		check.id.focus()
-		return false;
-	}
-
-	//학번에 숫자만 입력가능하도록 검사 
-
-	var studentNumCheck= /^[0-9+]{6,12}$/;
-
-
-	if(!studentNumCheck.test(check.studentNum.value))
-	{
-
-		alert("학번은 숫자만 가능합니다")
-		check.studentNum.focus();
-		return false;
-
-	}
-	}
 	
 	//이름입력 여부 검사 
 	if(check.name.value=="")

@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/Header.jsp=UTF-8
 encoding//WebContent/Nav.jsp=UTF-8
+encoding//WebContent/addClub.jsp=UTF-8
 encoding//WebContent/application.jsp=UTF-8
 encoding//WebContent/applicationManagement.jsp=UTF-8
 encoding//WebContent/applyDetail.jsp=UTF-8
