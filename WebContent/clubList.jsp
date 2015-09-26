@@ -41,7 +41,7 @@
 		String mr=URLEncoder.encode("M.R.Crew");
 		String iris=URLEncoder.encode("아이리스");
 	%>
-		<tr>
+	<!-- 	<tr>
 			<td onclick="location.href='introduce.do?club=<%=mr%>'"><img class="img-rounded" src="assets/image/ex.jpg" width="90%" height="90%"><br>M.R Crew</td>
 			<td onclick="location.href='introduce.do?club=<%=kkoon%>'"><img class="img-rounded" src="assets/image/kkoon.jpg" width="90%" height="90%"><br>꾼</td>
 			
@@ -49,8 +49,8 @@
 		<tr>
 			<td onclick="location.href='introduce.do?club=<%=han%>'"><img class="img-rounded" src="assets/image/han.jpg" width="90%" height="90%"><br>한비</td>
 			<td onclick="location.href='introduce.do?club=<%=iris%>'"><img class="img-rounded" src="assets/image/main4.jpg" width="90%" height="90%"><br>아이리스</td>
-		</tr>
-		<% /* 
+		</tr> -->
+		<% 
 			List clubList = (List) request.getAttribute("clubList");
 			if (clubList != null) {
 				for (int i = 0; i < clubList.size(); i++) {
@@ -61,8 +61,7 @@
 					ClubData cd = (ClubData) clubList.get(i);
 					String name = cd.getName();
 					String encodingName = URLEncoder.encode(name);
-					out.println("<td><a href='introduce.do?club="
-							+ encodingName + "'>" + name + "</a></td>");
+					out.println("<td onclick='location.href=\"introduce.do?club="+encodingName+"\"'><img class='img-rounded' src='"+cd.getImage()+"' width='90%' height='90%' alt="+name+"><br>"+name+"</td>");
 					if (i!=0 && i % 2 == 1) {
 
 						out.println("</tr>");
@@ -71,7 +70,7 @@
 			}
 
 			out.println("<br>");
-			*/
+			
 		%>
 	</table>
 	</center>

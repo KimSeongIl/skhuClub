@@ -35,13 +35,14 @@ public class ClubBean {
 		List clubList=null;
 		ClubData cd=null;
 		try(Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("select name from club");){
+				PreparedStatement pstmt=conn.prepareStatement("select name,image from club");){
 			try(ResultSet rs=pstmt.executeQuery();){
 				if(rs.next()){
 					clubList=new ArrayList();
 					do{
 						cd=new ClubData();
 						cd.setName(rs.getString("name"));
+						cd.setImage(rs.getString("image"));
 						clubList.add(cd);
 
 					}while(rs.next());
