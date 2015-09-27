@@ -64,17 +64,24 @@ public class ClubBean {
 		String homepage=cl.getHomePage();
 		String clubexplain=cl.getClubExplain();
 		String clubevent=cl.getClubEvent();
+		String image=cl.getImage();
+		System.out.println(name);
+		System.out.println(homepage);
+		System.out.println(clubevent);
+		System.out.println(image);
+		
 
 
 		try(
 				Connection conn=Conn.getConnection();
-				PreparedStatement pstmt=conn.prepareStatement("update club set homepage=?,clubexplain=?,clubevent=? where name=?");
+				PreparedStatement pstmt=conn.prepareStatement("update club set homepage=?,clubexplain=?,clubevent=?,image=? where name=?");
 				){
 
 			pstmt.setString(1, homepage);
 			pstmt.setString(2,clubexplain);
 			pstmt.setString(3,clubevent);
-			pstmt.setString(4,name);
+			pstmt.setString(4,image);
+			pstmt.setString(5,name);
 			pstmt.executeUpdate();
 		}catch (Exception e){
 			e.printStackTrace();

@@ -41,10 +41,10 @@ public class ClubData {
 	}
 	public void setImage(String image){
 		this.image=image;
-	}
+	}//클럽이미지
 	public String getImage(){
 		return image;
-	}
+	}//클럽이미지
 	public void setMember(String member){
 		this.member=member;
 	}
