@@ -18,8 +18,8 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
 	
 	
 
-	String uploads=request.getServletContext().getRealPath("/assets/uploads");
-	System.out.println(uploads);
+	String uploads="C:/project/skhuClub/WebContent/assets/image";
+	
 	int sizeLimit= 1024*1024*15;
 	
 	
@@ -29,8 +29,8 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
 	 
 	 
 	String fileName = multi.getFilesystemName("clubImage");
-	String m_fileFullPath = "/assets/uploads/"+ fileName; 
-	System.out.println(m_fileFullPath);
+	String m_fileFullPath = "assets/image/"+fileName; 
+	
 	
       
 	
@@ -38,11 +38,7 @@ public String requestPro(HttpServletRequest request,HttpServletResponse response
  	String homepage=multi.getParameter("homepage");
  	String clubexplain=multi.getParameter("clubexplain").replaceAll("\n", "<br>");
  	String clubevent=multi.getParameter("clubevent").replaceAll("\n","<br>");
- 	System.out.println(name);
- 	System.out.println(homepage);
- 	System.out.println(clubexplain);
- 	System.out.println(clubevent);
-	
+ 
 	ClubData cl=new ClubData();
 	
 	cl.setName(name);

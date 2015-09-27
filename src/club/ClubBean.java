@@ -65,10 +65,7 @@ public class ClubBean {
 		String clubexplain=cl.getClubExplain();
 		String clubevent=cl.getClubEvent();
 		String image=cl.getImage();
-		System.out.println(name);
-		System.out.println(homepage);
-		System.out.println(clubevent);
-		System.out.println(image);
+	
 		
 
 
