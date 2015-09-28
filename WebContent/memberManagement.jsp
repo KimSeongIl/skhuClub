@@ -33,6 +33,7 @@
 			<th>이메일</th>
 			<th>권한</th>
 			<th></th>
+			<th></th>
 		</tr>
 		<% 
 			for(int i=0;i<list.size();i++){
@@ -44,7 +45,8 @@
 					out.println("<td>"+md.getName()+"</td>");
 					out.println("<td>"+md.getPhone()+"</td>");
 					out.println("<td>"+md.getEmail()+"</td>");
-					out.println("<td><span class='modifyContent'></span><span class='memberAuth'>"+md.getAuthority()+"</span>&nbsp;&nbsp;<input type='button' class='btn btn-primary btn-sm memberAuthModify' value='수정'><span class='memberAuthForm'><input type='button' class='btn btn-primary btn-sm memberAuthSubmit' uid="+md.getId()+" value='수정'>&nbsp;<input type='button' class='btn btn-default btn-sm modifyCancel' value='취소'></span></td>");
+					out.println("<td><span class='modifyContent'></span><span class='memberAuth'>"+md.getAuthority()+"</span>&nbsp;&nbsp;</td>");
+					out.println("<td><span class='modifyContent'></span><input type='button' class='btn btn-primary btn-sm memberAuthModify' value='수정'><span class='memberAuthForm'><input type='button' class='btn btn-primary btn-sm memberAuthSubmit' uid="+md.getId()+" value='수정'>&nbsp;<input type='button' class='btn btn-default btn-sm modifyCancel' value='취소'></span></td>");
 					out.println("<td><input type='button' class='btn btn-default btn-sm memberDelete' uid="+md.getId()+" value='삭제'</td>");
 					out.println("</tr>");
 				}
